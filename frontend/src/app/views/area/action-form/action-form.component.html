@@ -1,0 +1,97 @@
+<div
+  flex
+  fxLayout="column"
+  id="actionFormContainer"
+  class="form-container"
+  fxLayoutAlign="center center"
+  fxLayoutGap="20px"
+>
+  <div>Fill in the following details</div>
+  <form [formGroup]="actionForm" fxFlexFill flex>
+    <mat-form-field fxFlexFill flex>
+      <input
+        type="text"
+        placeholder="Select Area"
+        aria-label="Area"
+        matInput
+        formControlName="area"
+        [matAutocomplete]="auto"
+      />
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{ option.locationName }}
+        </mat-option>
+      </mat-autocomplete>
+      <mat-error *ngIf="actionForm.get('area').hasError('required')">
+        This is required
+      </mat-error>
+    </mat-form-field>
+    <div fxFlexFill flex *ngIf="type === 'NEED_HELP'">
+      <mat-label>What do you need ?</mat-label>
+      <mat-selection-list formControlName="needHelp">
+        <mat-list-option
+          required
+          checkboxPosition="before"
+          *ngFor="let help of needHelpOptions"
+          [value]="help"
+        >
+          {{ help }}
+        </mat-list-option>
+      </mat-selection-list>
+    </div>
+    <mat-form-field appearance="outline" fxFlexFill flex *ngIf="type === 'RESOURCES_AVAILABLE'">
+      <mat-label>Item Name</mat-label>
+      <input
+        matInput
+        placeholder="Enter the Item name"
+        required
+        formControlName="itemName"
+        [errorStateMatcher]="matcher"
+      />
+      <mat-error *ngIf="actionForm.get('itemName').hasError('required')">
+        This is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" fxFlexFill flex *ngIf="type === 'RESOURCES_AVAILABLE'">
+      <mat-label>Item Quantity</mat-label>
+      <input
+        matInput
+        type="number"
+        placeholder="Enter the quantity for the item"
+        required
+        formControlName="itemQuantity"
+        [errorStateMatcher]="matcher"
+      />
+      <mat-error *ngIf="actionForm.get('itemQuantity').hasError('required')">
+        This is required
+      </mat-error>
+    </mat-form-field>
+    <div fxFlexFill flex fxLayout="column" *ngIf="type === 'WANT_TO_HELP'">
+      <mat-label>I want to help as</mat-label>
+      <mat-radio-group
+        aria-label="I want to help as"
+        formControlName="serviceOffered"
+        fxFlexFill
+        flex
+        class="radio-group"
+        required
+      >
+        <mat-radio-button class="radio-button" value="Volunteer">Volunteer</mat-radio-button>
+        <mat-radio-button class="radio-button" value="Doctor">Doctor</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <mat-form-field fxFlexFill flex *ngIf="type === 'NEED_HELP'">
+      <textarea matInput placeholder="Description" formControlName="description"></textarea>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      fxFlexFill
+      flex
+      [disabled]="!isSubmitDisabled()"
+      (click)="submitAction()"
+    >
+      Submit
+    </button>
+  </form>
+</div>

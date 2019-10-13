@@ -1,0 +1,84 @@
+<mat-toolbar fxLayout="row" flex color="primary" class="header-toolbar" fxLayoutGap="15px">
+  <div fxFlex="30" fxLayout="row" fxLayoutAlign="start center">
+    <mat-icon aria-hidden="false" aria-label="menu" (click)="snav.toggle()">menu</mat-icon>
+    Let's Help
+  </div>
+</mat-toolbar>
+<div class="register-container">
+  <form [formGroup]="registerForm">
+    <mat-form-field appearance="outline" fxFlexFill flex>
+      <mat-label>Name</mat-label>
+      <input
+        matInput
+        placeholder="Enter your name"
+        required
+        formControlName="name"
+        [errorStateMatcher]="matcher"
+      />
+      <mat-error *ngIf="registerForm.get('name').hasError('required')">
+        This is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" fxFlexFill flex>
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        placeholder="Enter your email"
+        formControlName="email"
+        [errorStateMatcher]="matcher"
+        required
+      />
+      <mat-error *ngIf="registerForm.get('email').hasError('required')">
+        This is required
+      </mat-error>
+      <mat-error *ngIf="registerForm.get('email').hasError('email')">
+        Please enter a valid email
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" fxFlexFill flex>
+      <mat-label>Mobile Number</mat-label>
+      <input
+        matInput
+        placeholder="Enter your Mobile Number"
+        formControlName="mobileNumber"
+        [errorStateMatcher]="matcher"
+        minlength="10"
+        maxlength="10"
+        required
+      />
+      <mat-error *ngIf="registerForm.get('mobileNumber').hasError('required')">
+        This is required
+      </mat-error>
+      <mat-error *ngIf="registerForm.get('mobileNumber').hasError('minlength')">
+        Please enter minimum 10 numbers
+      </mat-error>
+      <mat-error *ngIf="registerForm.get('mobileNumber').hasError('maxlength')">
+        Please enter maximum 10 numbers
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" fxFlexFill flex>
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        type="password"
+        placeholder="Enter your Password"
+        required
+        formControlName="password"
+        [errorStateMatcher]="matcher"
+      />
+      <mat-error *ngIf="registerForm.get('password').hasError('required')">
+        This is required
+      </mat-error>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      fxFlexFill
+      flex
+      [disabled]="isRegisterDisabled()"
+      (click)="register()"
+    >
+      Register
+    </button>
+  </form>
+</div>

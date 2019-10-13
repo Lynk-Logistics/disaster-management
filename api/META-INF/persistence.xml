@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <persistence-unit name="persistenceUnit">
+        <class>com.assist.api.models.old.AuthorityModel</class>
+        <class>com.assist.api.models.old.UserModel</class>
+        <class>com.assist.api.models.old.UserAuthorityModel</class>
+        <class>com.assist.api.models.ActionedByModel</class>
+        <class>com.assist.api.models.ActionsModel</class>
+        <class>com.assist.api.models.AuthorityModel</class>
+        <class>com.assist.api.models.FilesModel</class>
+        <class>com.assist.api.models.LocationsModel</class>
+        <class>com.assist.api.models.OrganisationModel</class>
+        <class>com.assist.api.models.UserModel</class>
+        <class>com.assist.api.models.UserAuthorityModel</class>
+        <class>com.assist.api.models.UserOrganisationMappingModel</class>
+        <class>com.assist.api.models.zzz.ActionedByModel</class>
+        <class>com.assist.api.models.zzz.ActionsModel</class>
+        <class>com.assist.api.models.zzz.AuthorityModel</class>
+        <class>com.assist.api.models.zzz.FilesModel</class>
+        <class>com.assist.api.models.zzz.LocationsModel</class>
+        <class>com.assist.api.models.zzz.OrganisationModel</class>
+        <class>com.assist.api.models.zzz.StorageItemModel</class>
+        <class>com.assist.api.models.zzz.StorageCentreModel</class>
+        <class>com.assist.api.models.zzz.UserAuthorityModel</class>
+        <class>com.assist.api.models.zzz.UserOrganisationMappingModel</class>
+        <class>com.assist.api.models.zzz.UsersModel</class>
+        <properties>
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/assist"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+        </properties>
+    </persistence-unit>
+</persistence>
