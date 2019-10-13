@@ -1,0 +1,125 @@
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+  
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    
+    <style>
+  
+  #textarea {
+      -moz-appearance: textfield-multiline;
+      -webkit-appearance: textarea;
+      border: 1px solid gray;
+      font: medium -moz-fixed;
+      font: -webkit-small-control;
+      height: 200px;
+      overflow: auto;
+      padding: 2px;
+      resize: both;
+      width: 100%;
+      font-size: 16px
+  }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+  
+      .container-fluid,
+      .row {
+        height: 550px;width:100%
+      }
+  
+      .board-container {
+        padding: 40px;
+        box-sizing: border-box
+      }
+  
+      .board {
+        background-color: #fff;
+  
+        padding: 40px;
+      }
+    </style>
+    <script>
+      var matches=[];
+      function setsamplehtmlinput() {
+        toastr.success('Sample input successfully applied.');
+        document.getElementById("textarea").innerHTML = "Derrida, J. (1967). L’écriture et la différence (1 éd.). Paris: Éditions du Seuil.";
+      }
+      function GenerateOutput() {
+        var value = document.getElementById("textarea").innerHTML;
+        var copiedValue="";
+        var pre=value.substr(0,3);
+        var mid="<span onclick='renderOutput(0)' style='background-color:#c0d1ff'>"+value.substr(3,3)+"</span>";
+        var post=value.substr(6,value.length);
+       
+  
+        toastr.options = {
+          "closeButton": true,
+          "timeOut": "0"
+        }
+        toastr.success('Processing..');
+        var request = $.ajax({
+          url: "http://localhost:3004/api/getcategorypapers",
+          type: "POST",
+          data: { "text": value }
+        });
+  
+        request.done(function (msg) {
+          
+          toastr.clear();
+          toastr.options = {
+            "closeButton": true,
+            "timeOut": "3000"
+          }
+          toastr.success('Succesfully rendered the output.');
+          
+          document.getElementById("json2").innerHTML = msg;
+  
+        });
+  
+        request.fail(function (jqXHR, textStatus) {
+          toastr.clear();
+          toastr.options = {
+            "closeButton": true,
+            "timeOut": "3000"
+          }
+          toastr.error('Failed to render the output.');
+          alert("Request failed: " + textStatus);
+        });
+      }
+      function renderOutput(i)
+      {
+        document.getElementById("json").innerHTML = "";
+        document.getElementById("json2").innerHTML = "";
+        document.getElementById("json").innerHTML = "Possible Replacements:<br><br>"
+        
+        document.getElementById("json").innerHTML = JSON.stringify(matches[i].replacements);
+        if(matches[i].message)
+        {
+          document.getElementById("json2").innerHTML += "MESSAGE : <br><br>";
+          document.getElementById("json2").innerHTML += JSON.stringify(matches[i].message);
+         
+        }
+        if(matches[i].rule)
+        {
+          document.getElementById("json2").innerHTML += "<br><br>Rule Information : <br><br>";
+          document.getElementById("json2").innerHTML += JSON.stringify(matches[i].rule);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    This works! 
+  </body>

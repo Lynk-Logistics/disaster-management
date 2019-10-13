@@ -1,0 +1,72 @@
+#################
+## Windows detritus
+#################
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+history
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Mac crap
+.DS_Store
+.vscode
+cypress
+
+# bat files
+app.bat
+
+package-lock.json
+data.xml
+
+
+#################
+## Directories
+#################
+
+node_modules/
+/.project
+npm-debug.log*
+.history
+waste
+
+
+#################
+## Windows detritus
+#################
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+history
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Mac crap
+.DS_Store
+.vscode
+cypress
+
+# bat files
+app.bat
+
+package-lock.json
+data.xml
+
+
+#################
+## Directories
+#################
+
+node_modules/
+/.project
+npm-debug.log*
+.history
+waste

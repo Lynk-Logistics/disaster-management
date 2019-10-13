@@ -1,0 +1,43 @@
+BIBLIO VALIDATE 2.0 API DOCUMENTATION:
+
+The bilbio validate api supports the following set of services:
+
+1. Search by PMID:
+
+Searches the Pubmed database based on PMID entered and returns the following set of details in JSON format: 1. Input Supplied 2. Input Data Converted to JSON. 3. Fetched Pubmed JSON. 4. Merged JSON 5. Output from Truecaser for title 7. Citeproc JSON 8. Biblio graph string from Citeproc system ( without tagging styled) 9. Citation data. 10. BiblioGraphy string (tagged html) from citeproc system ( with CSS STYLED) 11. DOI ID of the article 12. PUBMED ID of the article.
+
+Parameters to be passed in api call: /search? 1. type = pmid 2. style=*required_style* 3. data=*pmid to be searched for* 4. locale=*required locale* 5. pre=extra pre string to be attched in bibliography data. 6. post=extra post string to be attached in bibliography data. Example api call: /search?style=academy-of-management-review.csl&data=11808601&locale=locales-en-US.xml&pre=hi&post=hi&type=pmid
+
+BIBLIO VALIDATE 2.0 API DOCUMENTATION:
+
+2. Search by DOI:
+
+Searches the Crossref database based on DOI entered and returns the following set of details in JSON format: 1. Input Supplied 2. Input Data Converted to JSON. 3. Fetched Pubmed JSON. 4. Merged JSON 5. Output from Truecaser for title 7. Citeproc JSON 8. Biblio graph string from Citeproc system ( without tagging styled) 9. Citation data. 10. BiblioGraphy string (tagged html) from citeproc system ( with CSS STYLED) 11. DOI ID of the article 12. PUBMED ID of the article.
+
+Parameters to be passed in api call: /search? 1. type = doi 2. style=*required_style* 3. data=*doi to be searched for* 4. locale=*required locale* 5. pre=extra pre string to be attched in bibliography data. 6. post=extra post string to be attached in bibliography data. Example api call: /search?style=academy-of-management-review.csl&data=10.1126/science.169.3946.635&locale=locales-en-US.xml&pre=hi&post=hi&type=doi
+
+3. Search by Tagged Input along with validation.
+
+Searches the pubmed and crossref database based on html tagged input entered and returns the following set of details in JSON format: 1. Input Supplied 2. Input Data Converted to JSON. 3. Output from ParseReference.(without true casing) 4. Fetched Pubmed JSON. 5. Fetched Crossref JSON. 6. Merged JSON 6. Output from Truecaser for title 7. Input JSON to citeproc system 8. Biblio graph string from citeproc system ( without styled) 9. Generated citation data. 10. Biblio Graphy string (tagged html) from citeproc system ( with CSS STYLED) 11. DOI ID of the article 12. PUBMED ID of the article.
+
+Parameters to be passed in api call: /validate? 1. type = html 2. style=*required_style* 3. data=*tagged to be validated * 4. locale=*required locale* 5. pre=extra pre string to be attched in bibliography data. 6. post=extra post string to be attached in bibliography data. 7. refJournalType=*Desired type* (Journal | Book | etc ) 8. flag=true
+
+4. Search by Reference Input
+
+Searches the pubmed and crossref database based on reference text input entered and returns the following set of details in JSON format: 1. Input Supplied 2. Input Data Converted to JSON. 3. Output from ParseReference.(without true casing) 4. Fetched Pubmed JSON. 5. Fetched Crossref JSON. 6. Merged JSON 6. Output from Truecaser for title 7. Input JSON to citeproc system 8. Biblio graph string from citeproc system ( without styled) 9. Generated citation data. 10. Biblio Graphy string (tagged html) from citeproc system ( with CSS STYLED) 11. DOI ID of the article 12. PUBMED ID of the article.
+
+Parameters to be passed in api call: /validate? 1. type = html 2. style=*required_style* 3. data=*tagged to be validated * 4. locale=*required locale* 5. pre=extra pre string to be attched in bibliography data. 6. post=extra post string to be attached in bibliography data. 7. refJournalType=*Desired type* (Journal | Book | etc ) 8. flag=true
+
+5. Extract style set present in the server:
+
+Extracts the possible style set along with its style name from the server:
+
+EXAMPLE API CALL: /extractLocaleList?
+
+6. Search by tagged input without validation. Searches the pubmed and crossref database based on html tagged input entered and returns the following set of details in JSON format: 1. Input Supplied 2. Input Data Converted to JSON. 3. Output from Truecaser for title 4. Input JSON to citeproc system 5. Biblio graph string from citeproc system ( without styled) 6. Generated citation data. 7. Biblio Graphy string (tagged html) from citeproc system ( with CSS STYLED)
+
+Parameters to be passed in api call: /validate? 1. type = html 2. style=*required_style* 3. data=*tagged to be validated * 4. locale=*required locale* 5. pre=extra pre string to be attched in bibliography data. 6. post=extra post string to be attached in bibliography data. 7. refJournalType=*Desired type* (Journal | Book | etc ) 8. flag=false
+
+Example api call:
+
+/validate?type=html&style=dove-medical-press.csl&locale=locales-en-US.xml&pre=&post=&data=<p%20class="jrnlRefText"%20id="R4"%20data-id="R4"%20data-styled="RefText"%20data-class-name="RefText"%20data-reftype="journal"%20data-valid-id="R4"%20data-pmid="http://www.ncbi.nlm.nih.gov/pubmed/26503994"%20data-validated="true"%20data-editable="false"><span%20class="RefSlNo"%20id="e705ec03-b9a4-4046-8bf1-381db107bfb7">4.</span><span%20class="RefAuthor"%20id="07e95f03-ed88-4ddc-9db7-f7901903feec"><span%20class="RefSurName"%20id="8e323c49-2d12-4c2f-a792-8eec11b5d025">Stotz</span>%20<span%20class="RefGivenName"%20id="9264e36a-5013-4179-afc2-9a983ece166a">M</span></span>,%20<span%20class="RefAuthor"%20id="7eaa71cc-9eea-4389-8ffa-48bf07bc5791"><span%20class="RefSurName"%20id="ed6c6a7e-ed1a-42d0-b142-d4484c94ec83">Gerger</span>%20<span%20class="RefGivenName"%20id="d397908e-ad11-4eea-a396-7e82214d0d21">A</span></span>,%20<span%20class="RefAuthor"%20id="4719d891-6bc8-4610-9a13-92d533584dc4"><span%20class="RefSurName"%20id="bbe70e40-f000-4ccc-9f21-d9b4084619ea">Haybaeck</span>%20<span%20class="RefGivenName"%20id="5ef19017-cf5f-4d81-a49b-14b2aed43e1d">J</span></span>,%20<span%20class="RefAuthor"%20id="0814882d-9867-4e10-a7f3-7307c22df45b"><span%20class="RefSurName"%20id="cd2208c4-1b77-443d-918a-87134aaea2f6">Kiesslich</span>%20<span%20class="RefGivenName"%20id="0342ad78-8f17-4351-86d1-6e17a14886bd">T</span></span>,%20<span%20class="RefAuthor"%20id="12148062-0cdb-4e16-affd-622adfcc71ca"><span%20class="RefSurName"%20id="56a86565-9ec9-451f-99ec-75937b179bcb">Bullock</span>%20<span%20class="RefGivenName"%20id="eb76a8ab-0f31-420d-98a6-5ae5f44de16c">MD</span></span>,%20<span%20class="RefAuthor"%20id="98f337ac-884b-4fc3-af29-534319b3ffbf"><span%20class="RefSurName"%20id="c4dc47ee-cbc0-4cf1-9f16-076c064c32b0">Pichler</span>%20<span%20class="RefGivenName"%20id="218c7c27-5b91-43d8-b63b-296b2b983f31">M</span></span>.%20<span%20class="RefArticleTitle"%20id="158f418d-399d-4e58-b325-2a6dcb1f89c2">Molecular%20Targeted%20Therapies%20in%20Hepatocellular%20Carcinoma:%20Past,%20Present%20and%20Future</span>.%20<span%20class="RefJournalTitle"%20id="555517a0-e859-458e-b444-04fcbe6552fd"><em%20id="4218a5d3-1146-4705-95bf-cd458810e877">Anticancer%20Res</em></span>.%20<span%20class="RefYear"%20id="8a03d93c-b791-490b-b090-ba30ff8b860a">2015</span>;<span%20class="RefVolume"%20id="a0660212-9e84-4780-862e-29a310af04e8">35</span>(<span%20class="RefIssue"%20id="39588124-1c13-4c85-a934-ebe70d25a2d7">11</span>):<span%20class="RefFPage"%20id="49ff3b9a-16e2-41e7-87bd-7296e8514215">5737</span>–<span%20class="RefLPage"%20id="4b431171-7ec9-4e08-8d90-85663b2e760b">5744</span>.</p>&refJournalType=Journal&flag=false

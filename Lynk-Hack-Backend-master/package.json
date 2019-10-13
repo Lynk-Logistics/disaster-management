@@ -1,0 +1,28 @@
+{
+  "name": "editreference",
+  "version": "1.0.0",
+  "description": "Edit reference per customer preference",
+  "main": "editReference.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "edit",
+    "reference",
+    "pubmed",
+    "crossref"
+  ],
+  "author": "Chetan Dwarkani",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "express": "^4.16.3",
+    "express-status-monitor": "^1.1.5",
+    "fs": "0.0.1-security",
+    "helmet": "^3.13.0",
+    "mysql": "^2.16.0",
+    "path": "^0.12.7",
+    "q": "^1.5.1"
+  }
+}
