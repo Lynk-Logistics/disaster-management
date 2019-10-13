@@ -1,0 +1,48 @@
+<button
+  mat-raised-button
+  class="donate"
+  color="primary"
+  routerLink="action-form"
+  [queryParams]="{ type: 'RESOURCES_AVAILABLE' }"
+>
+  Donate Now
+</button>
+<p class="area-sub-heading">Donations available for collection</p>
+<div class="divider"></div>
+
+<div class="overflow-table">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Position Column -->
+    <ng-container matColumnDef="Qty">
+      <th mat-header-cell *matHeaderCellDef>Qty</th>
+      <td mat-cell *matCellDef="let element">{{ element.itemQuantity }}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="Name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.postedByUser.name }}</td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Item(s)">
+      <th mat-header-cell *matHeaderCellDef>Item(s)</th>
+      <td mat-cell *matCellDef="let element">{{ element.itemName }}</td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <!-- <ng-container matColumnDef="Location">
+      <th mat-header-cell *matHeaderCellDef>Location</th>
+      <td mat-cell *matCellDef="let element">{{ element.location.locationName }}</td>
+    </ng-container> -->
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Contact">
+      <th mat-header-cell *matHeaderCellDef>Contact</th>
+      <td mat-cell *matCellDef="let element">{{ element.postedByUser.mobile }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

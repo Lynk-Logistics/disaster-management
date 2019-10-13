@@ -1,0 +1,50 @@
+<mat-toolbar fxLayout="row" flex color="primary" class="header-toolbar" fxLayoutGap="15px">
+  <div fxFlex="30" fxLayout="row" fxLayoutAlign="start center">
+    <mat-icon aria-hidden="false" aria-label="menu" (click)="snav.toggle()">menu</mat-icon>
+    Assist
+  </div>
+</mat-toolbar>
+<div class="login-container">
+  <form [formGroup]="loginForm">
+    <mat-form-field appearance="outline" fxFlexFill flex>
+      <mat-label>Username</mat-label>
+      <input
+        matInput
+        placeholder="Enter your email/mobile"
+        required
+        formControlName="username"
+        [errorStateMatcher]="matcher"
+      />
+      <mat-error *ngIf="loginForm.get('username').hasError('required')">
+        This is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" fxFlexFill flex>
+      <mat-label>Password</mat-label>
+      <input
+        type="password"
+        matInput
+        placeholder="Enter your Password"
+        required
+        formControlName="password"
+        [errorStateMatcher]="matcher"
+      />
+      <mat-error *ngIf="loginForm.get('password').hasError('required')">
+        This is required
+      </mat-error>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      fxFlexFill
+      flex
+      [disabled]="isLoginDisabled()"
+      (click)="login()"
+    >
+      Login
+    </button>
+    <div flex fxLayoutAlign="center center">
+      <button mat-button routerLink="/register">Register with us</button>
+    </div>
+  </form>
+</div>

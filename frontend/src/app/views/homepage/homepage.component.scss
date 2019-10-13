@@ -1,0 +1,70 @@
+.header {
+  width: 100%;
+  background: #607d8b;
+  padding: 5px;
+
+  .show-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo-area {
+      display: flex;
+      color: white;
+      align-items: center;
+
+      span {
+        margin-left: 10px;
+      }
+
+      .logo {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+
+  .login {
+    cursor: pointer;
+  }
+}
+
+.banner {
+  width: 100%;
+  min-height: 50%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.6) 100%),
+    url('../../../assets/images/kerala-floods-8.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  color: white;
+
+  .quote {
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    text-align: center;
+  }
+  p {
+    font-style: italic;
+    font-size: 1.3rem;
+  }
+}
+
+.fields {
+  display: flex;
+  justify-content: space-between;
+
+  .mat-form-field {
+    width: 47%;
+  }
+}
+
+#areaForm {
+  height: 40px;
+
+  button {
+    margin-top: 3px;
+  }
+}

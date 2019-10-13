@@ -1,0 +1,67 @@
+<div class="area-container">
+  <mat-toolbar fxLayout="row" flex color="primary" class="header-toolbar">
+    <div fxFlex="10" fxLayout="row" fxLayoutAlign="start center">
+      <mat-icon aria-hidden="false" aria-label="menu" (click)="snav.toggle()">menu</mat-icon>
+    </div>
+    <div fxFlex="70" fxLayoutAlign="center center">
+      <form [formGroup]="areaForm">
+        <mat-form-field floatLabel="never">
+          <input
+            type="text"
+            placeholder="Select Area"
+            aria-label="Area"
+            matInput
+            formControlName="area"
+            [matAutocomplete]="auto"
+          />
+          <mat-autocomplete
+            #auto="matAutocomplete"
+            [displayWith]="displayFn"
+            (optionSelected)="changeLocation($event)"
+          >
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+              {{ option.locationName }}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+    </div>
+    <div fxFlex="20" fxLayoutAlign="end center">
+      <div
+        [matMenuTriggerFor]="menu"
+        class="round-small-image"
+        fxLayout="row"
+        fxLayoutAlign="center center"
+      >
+        <span>{{ userInitial }}</span>
+      </div>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #snav class="sidenav">
+      <mat-list>
+        <mat-list-item routerLink="Donations">Donations</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item routerLink="Volunteers">Volunteers</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item routerLink="Help">Request Help</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item routerLink="Storage">Storage</mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div class="area-info-area">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Post</button>
+  <button mat-menu-item>Settings</button>
+  <button mat-menu-item>Logout</button>
+</mat-menu>
