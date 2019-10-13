@@ -29,7 +29,7 @@ class MapView extends Component {
         console.log("map",this.props.region.location? this.props.region.location.coordinates : "waiting")
         return(
             <GoogleMapReact
-                bootstrapURLKeys={{ key: "AIzaSyC3_Kdx6Wr2gO-wKnOBiproKKhgaTdIVAg" }}
+                bootstrapURLKeys={{ key: "Your API Key Here" }}
                 defaultCenter={{
                     lat: 13.00032,
                     lng: 80.21624
