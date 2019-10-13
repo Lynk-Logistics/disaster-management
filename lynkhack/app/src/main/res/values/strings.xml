@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LynkHack</string>
+    <string name="title_activity_request_help">RequestHelpActivity</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+</resources>
