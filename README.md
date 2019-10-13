@@ -25,15 +25,15 @@
     
 ### Screen Shots of Application
 
-![SS 1](/Screenshots/login.png =250x250)
-![SS 2](/Screenshots/user-home.png | width=200)
-![SS 3](/Screenshots/confirm-search.png | width=200)
-![SS 4](/Screenshots/search-doctor.png | width=200)
-![SS 5](/Screenshots/user-view-doc-pro.png | width=200)
-![SS 6](/Screenshots/doctor-past-re.png | width=200)
-![SS 7](/Screenshots/doctor-pro.png | width=200)
-![SS 8](/Screenshots/request-search.png | width=200)
-![SS 9](/Screenshots/approve-req.png | width=200)
+![SS 1](/Screenshots/login.png)
+![SS 2](/Screenshots/user-home.png)
+![SS 3](/Screenshots/confirm-search.png)
+![SS 4](/Screenshots/search-doctor.png)
+![SS 5](/Screenshots/user-view-doc-pro.png)
+![SS 6](/Screenshots/doctor-past-re.png)
+![SS 7](/Screenshots/doctor-pro.png)
+![SS 8](/Screenshots/request-search.png)
+![SS 9](/Screenshots/approve-req.png)
 
 ### Instructions to Code
 
