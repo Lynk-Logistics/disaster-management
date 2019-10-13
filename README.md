@@ -1,6 +1,23 @@
 ## Team Null Pointers - LynkAid Web Dashboard
 
-Note: Set your google API KEY for maps in src/feed/geoLocation.js <GoogleMapReact> component
+# Stack used
+
+1. React Js - UI
+2. React-router - Routing
+3. maps - google-map-react
+
+# Team Members
+
+1. Mohammed Javid - React Native (Mobile)
+2. Karan - React (Web)
+3. Dhanyashree Narayanee - Node (Backend)
+
+# App Flow.
+
+Data flow is shared between the mobile app and web app. 
+Using the Web dashboard the user can ping his current location as a safe Zone (service point) mostly for government and NGO's and the user can view all the map coordinates categorized as those who needs help and those who can help.
+Note: Set your google API KEY for maps in src/feed/geoLocation.js <GoogleMapReact> component.
+  
 ## Available Scripts
 
 In the project directory, you can run:
