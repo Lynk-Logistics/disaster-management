@@ -43,6 +43,8 @@ class SettingsFragment : NativeLocationFragment()  {
         switch1.isChecked = sharedPreferences.getBoolean(FOOD_AVAILABLE, false)
         switch2.isChecked = sharedPreferences.getBoolean(MEDICINE_AVAILABLE, false)
 
+        switch3.isChecked = sharedPreferences.getBoolean(ALERT, false)
+
         switch1.setOnClickListener {
             sharedPreferences.edit()
                     .putBoolean(FOOD_AVAILABLE, switch1.isChecked)
@@ -55,6 +57,12 @@ class SettingsFragment : NativeLocationFragment()  {
         switch2.setOnClickListener {
             sharedPreferences.edit()
                     .putBoolean(FOOD_AVAILABLE, switch2.isChecked)
+                    .apply()
+        }
+
+        switch3.setOnClickListener {
+            sharedPreferences.edit()
+                    .putBoolean(ALERT, switch3.isChecked)
                     .apply()
         }
     }
@@ -84,5 +92,6 @@ class SettingsFragment : NativeLocationFragment()  {
     companion object {
         const val FOOD_AVAILABLE = "food_available"
         const val MEDICINE_AVAILABLE = "medicine_available"
+        const val ALERT = "alert"
     }
 }

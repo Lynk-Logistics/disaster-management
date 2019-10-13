@@ -14,10 +14,13 @@ import com.bridgefy.sdk.client.Bridgefy
 import com.bridgefy.sdk.framework.exceptions.MessageException
 import java.util.*
 import android.telephony.SmsManager
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import com.example.myapplication.BridegfyVictim.*
 import com.example.myapplication.BridegfyVictim.Dao.FoodServiceDao
 import com.example.myapplication.BridegfyVictim.Dao.FoodServiceDatabase
 import com.example.myapplication.BridegfyVictim.Dao.FoodServiceEntity
+import kotlinx.android.synthetic.main.fragment_settings.*
 
 class MyApplication : Application() {
 
@@ -61,6 +64,21 @@ class MyApplication : Application() {
         override fun onDeviceConnected(device: Device?, session: Session?) {
             super.onDeviceConnected(device, session)
             Toast.makeText(applicationContext, "Device connected", Toast.LENGTH_SHORT).show()
+            if (applicationContext.getSharedPreferences("Settings", Context.MODE_PRIVATE).getBoolean(SettingsFragment.ALERT, false)) {
+                val builder = NotificationCompat.Builder(applicationContext, "100")
+                        .setSmallIcon(R.drawable.ic_launcher_foreground)
+                        .setContentTitle(
+                                "Alert"
+                        )
+                        .setContentText("someone nearby needs help")
+                        .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+
+                with(NotificationManagerCompat.from(applicationContext)) {
+                    // notificationId is a unique int for each notification that you must define
+                    notify(1, builder.build())
+                }
+            }
+
             availableDevices.add(device)
         }
 
