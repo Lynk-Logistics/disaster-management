@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "119895911024",
+    "firebase_url": "https://lynksaver.firebaseio.com",
+    "project_id": "lynksaver",
+    "storage_bucket": "lynksaver.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:119895911024:android:9d071ef3ce2cc996dba2b5",
+        "android_client_info": {
+          "package_name": "com.lynkhack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "119895911024-ghn7vnvopdmfkqads09ughu03s2d0qda.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiFOrO0nqFKRbFPiXO9hXdFZ7ssKlyHN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "119895911024-ghn7vnvopdmfkqads09ughu03s2d0qda.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
