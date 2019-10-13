@@ -27,9 +27,9 @@ export class DonorsComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.subscriptions$))
       .subscribe((data: IAreaAction[]) => (this.dataSource = data));
 
-    this.router.routeReuseStrategy.shouldReuseRoute = () => {
-      return false;
-    };
+    // this.router.routeReuseStrategy.shouldReuseRoute = () => {
+    //   return false;
+    // };
   }
 
   ngOnDestroy() {
