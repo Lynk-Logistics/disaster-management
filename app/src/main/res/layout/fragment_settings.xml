@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BridegfyVictim.SettingsFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="@color/black">
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="50sp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:layout_marginTop="30dp"
+            android:gravity="start" />
+
+
+        <LinearLayout
+            android:layout_marginTop="90dp"
+            android:id="@+id/linear1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/textfood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food Available"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_marginTop="80dp"
+                android:fontFamily="sans-serif-condensed-medium">
+            </TextView>
+
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginTop="90dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginStart="80dp"
+                android:checked="true"
+                android:gravity="left"
+                android:background="@drawable/border"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_below="@+id/linear1">
+
+            <TextView
+                android:id="@+id/medication"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medication Available"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_marginTop="80dp"
+                android:fontFamily="sans-serif-condensed-medium">
+            </TextView>
+
+            <Switch
+                android:id="@+id/switch2"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginTop="90dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginStart="80dp"
+                android:checked="true"
+                android:gravity="left"
+                android:background="@drawable/border"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_below="@+id/linear2">
+
+            <TextView
+                android:id="@+id/volunteer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/volunteering"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_marginTop="80dp"
+                android:fontFamily="sans-serif-condensed-medium">
+            </TextView>
+
+            <Switch
+                android:id="@+id/switch3"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginLeft="110dp"
+                android:layout_marginStart="110dp"
+                android:checked="true"
+                android:gravity="left"
+                android:background="@drawable/border"
+                android:layout_marginBottom="10dp"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>
