@@ -1,0 +1,56 @@
+.sideBar{
+    height: inherit;
+    background-color: gainsboro;
+}
+
+.regionBar{
+    height: inherit;
+    background-color: black;
+}
+
+.appHeader{
+    height: 50px !important;
+    background-color: #4caf50;
+}
+
+.appBody{
+    height:91vh !important;
+    background-color: #4caf50;
+}
+
+.title{
+  height:100%; 
+  color: white;
+  padding:10px; 
+  font-size:20px;
+  font-weight: bolder;
+}
+
+.feedLink{
+    height:100%; 
+    color: white;
+    padding:10px;
+    padding-right: 20px !important;
+    text-align: right;
+    font-size:15px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.additionalInfo{
+    height: inherit;
+    background-color: gainsboro;
+}
+
+.RegionCard{
+    /* cursor: pointer; */
+    width:100%;
+}
+
+.RegionCard:hover{
+    background-color: teal;
+    color:white;
+}
+.selectedCard{
+    background-color:  #4caf50;
+}
