@@ -25,7 +25,15 @@
     
 ### Screen Shots of Application
 
-Updated Soon
+![SS 1](/Screenshots/login.png)
+![SS 2](/Screenshots/user-home.png)
+![SS 3](/Screenshots/confirm-search.png)
+![SS 4](/Screenshots/search-doctor.png)
+![SS 5](/Screenshots/user-view-doc-pro.png)
+![SS 6](/Screenshots/doctor-past-re.png)
+![SS 7](/Screenshots/doctor-pro.png)
+![SS 8](/Screenshots/request-search.png)
+![SS 9](/Screenshots/approve-req.png)
 
 ### Instructions to Code
 
