@@ -15,8 +15,12 @@ Please follow the steps below:
 6. Ensure to have [MongoDB][mongo] as the database.
 7. The app uses [Firbase-Admin-SDK][firebase] for push notification services.
 
+##### Note:
+Please use Replica Set for the database, as standalone does not support [changeStreams][changestream]
+
 
 [node]: https://nodejs.org/en/
 [npm]: https://www.npmjs.com/
 [firebase]: https://firebase.google.com/docs/admin/setup
 [mongo]: https://docs.mongodb.com/manual/administration/install-community/
+[changestream]: https://docs.mongodb.com/manual/changeStreams/
