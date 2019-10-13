@@ -15,10 +15,14 @@ import com.bridgefy.sdk.framework.exceptions.MessageException
 import java.util.*
 import android.telephony.SmsManager
 import com.example.myapplication.BridegfyVictim.*
+import com.example.myapplication.BridegfyVictim.Dao.FoodServiceDao
+import com.example.myapplication.BridegfyVictim.Dao.FoodServiceDatabase
+import com.example.myapplication.BridegfyVictim.Dao.FoodServiceEntity
 
 class MyApplication : Application() {
 
     val availableDevices: MutableList<Device?> = mutableListOf()
+    lateinit var foodServiceDao: FoodServiceDao
 
     val messageListener = object : MessageListener() {
         override fun onMessageSent(messageId: String?) {
@@ -71,6 +75,7 @@ class MyApplication : Application() {
         super.onCreate()
 
         createNotificationChannel()
+        foodServiceDao = FoodServiceDatabase.getDb(applicationContext).foodServiceDao()
         Bridgefy.initialize(applicationContext, "610fd8bb-54e6-4a21-9554-00740a7a1ba8", object : RegistrationListener() {
 
             override fun onRegistrationSuccessful(bridgefyClient: BridgefyClient) {
@@ -116,7 +121,14 @@ class MyApplication : Application() {
     }
 
     private fun handleFoodService(foodService: DisasterResources.FoodService) {
-
+        Toast.makeText(applicationContext, "$foodService", Toast.LENGTH_SHORT).show()
+        foodServiceDao.insertFoodService(
+                FoodServiceEntity(
+                        longitude =  foodService.longitude ,
+                        latitude = foodService.latitude,
+                        message = foodService.numOfPeople.toString()
+                )
+        )
     }
 
     private fun handleFoodRequest(foodResources: DisasterResources.FoodRequest) {

@@ -35,8 +35,8 @@ sealed class DisasterResources(
     ) : DisasterResources(deviceId)
 
     data class FoodService(
-            val latitude: Double?,
-            val longitude: Double?,
+            val latitude: Double,
+            val longitude: Double,
             val numOfPeople: Int,
             val deviceId: String,
             private val tag: String = FOOD_SERVICE

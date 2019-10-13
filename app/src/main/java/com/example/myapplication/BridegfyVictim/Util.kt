@@ -43,6 +43,7 @@ fun getContent(disasterResources: DisasterResources): String {
         is DisasterResources.SendEmergencyMessage -> "Send sms"
         is DisasterResources.FoodRequest -> "Required ${disasterResources.requiredFood} at ${disasterResources.area}"
         is DisasterResources.Medication -> " Medication Required ${disasterResources.requiredMedication} at ${disasterResources.area}"
+        is DisasterResources.FoodService -> ""
     }
 }
 
@@ -51,6 +52,7 @@ fun getTitle(disasterResources: DisasterResources): String {
         is DisasterResources.SendEmergencyMessage -> "Send emergency contact"
         is DisasterResources.FoodRequest -> "Food Request"
         is DisasterResources.Medication -> " Medication Request"
+        is DisasterResources.FoodService -> ""
     }
 }
 
