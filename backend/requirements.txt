@@ -1,0 +1,12 @@
+gunicorn
+flask
+flask_api
+flask_restful
+flask-cors
+firebase_admin
+googlemaps
+gmplot
+google-cloud-vision
+twitter
+configparser
+python-google-places

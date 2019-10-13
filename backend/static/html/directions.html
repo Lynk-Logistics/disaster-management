@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+        #map {
+            height: 100%;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #floating-panel {
+            position: absolute;
+            top: 10px;
+            left: 25%;
+            z-index: 5;
+            background-color: #fff;
+            padding: 5px;
+            border: 1px solid #999;
+            text-align: center;
+            font-family: 'Roboto', 'sans-serif';
+            line-height: 30px;
+            padding-left: 10px;
+        }
+
+        #right-panel {
+            font-family: 'Roboto', 'sans-serif';
+            line-height: 30px;
+            padding-left: 10px;
+        }
+
+        #right-panel select, #right-panel input {
+            font-size: 15px;
+        }
+
+        #right-panel select {
+            width: 100%;
+        }
+
+        #right-panel i {
+            font-size: 12px;
+        }
+
+        #right-panel {
+            height: 100%;
+            float: right;
+            width: 390px;
+            overflow: auto;
+        }
+
+        #map {
+            margin-right: 400px;
+        }
+
+        #floating-panel {
+            background: #fff;
+            padding: 5px;
+            font-size: 14px;
+            font-family: Arial;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
+            display: none;
+        }
+
+        @media print {
+            #map {
+                height: 500px;
+                margin: 0;
+            }
+
+            #right-panel {
+                float: none;
+                width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="right-panel"></div>
+<div id="map"></div>
+<script>
+    var directionsRenderer ;
+    var directionsService ;
+
+    function initMap() {
+        directionsRenderer = new google.maps.DirectionsRenderer;
+        directionsService = new google.maps.DirectionsService;
+        var chennai = new google.maps.LatLng(13.052138, 80.251608);
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 7,
+            center: chennai
+        });
+
+        map.data.loadGeoJson('/static/html/data.geojson');
+        directionsRenderer.setMap(map);
+        directionsRenderer.setPanel(document.getElementById('right-panel'));
+        // var start = "kodambakkam";
+        // var end = "egret park rd";
+        var start = new google.maps.LatLng('{{from_lat}}', '{{from_lng}}');
+        ;
+        var end = new google.maps.LatLng('{{to_lat}}', '{{to_lng}}');
+        ;
+        calculateAndDisplayRoute(start, end, map);
+    }
+
+
+    var directionsDisplays = [];
+    var waypts = [];
+    function calculateAndDisplayRoute(start, end, map) {
+        console.log("starting");
+            // alert(data);
+        var data;
+        // $.getJSON("/static/html/data.geojson", {
+        //     format: "geojson"
+        // })
+        // .done(function (data) {
+        $.get("get-unsafe-areas", function (data) {
+            data = data.response;
+            alert("Load was performed.");
+            console.log(data);
+            console.log(waypts);
+            directionsService.route({
+                origin: start,
+                destination: end,
+                travelMode: 'DRIVING',
+                // waypoints: waypts,
+                // optimizeWaypoints: true
+            }, function (response, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    var routes = response.routes;
+                    var colors = ['red', 'green', 'blue', 'orange', 'yellow', 'black'];
+                    start = response.routes[0].legs[0].start_location;
+                    end = response.routes[0].legs[0].end_location;
+                    for (var i = 0; i < routes.length; i++) {
+                        var directionsDisplay = new google.maps.DirectionsRenderer({
+                            map: map,
+                            directions: response,
+                            routeIndex: i,
+                            suppressMarkers: true,
+                            draggable: true,
+                            panel: document.getElementById('right-panel')
+                        });
+                        var pointsArray = [];
+                        pointsArray = response.routes[0].overview_path;
+                        for (var ipoint = 0; ipoint < pointsArray.length; ipoint++) {
+                            var point1 = pointsArray[ipoint];
+                            for (var i = 0; i < data.features.length; i++) {
+                                for (var j = 0; j < data.features[i].geometry.coordinates.length; j++) {
+                                    var lngGeoData = Math.round(10000 * data.features[i].geometry.coordinates[j][0]) / 10000;
+                                    var latGeoData = Math.round(10000 * data.features[i].geometry.coordinates[j][1]) / 10000;
+                                    // console.log(Math.round(10000 * point1.lng()) / 10000);
+                                    // console.log(Math.round(10000 * point1.lat()) / 10000);
+                                    if (lngGeoData == Math.round(10000 * point1.lng()) / 10000 && latGeoData == Math.round(10000 * point1.lat()) / 10000) {
+                                        var lat, lng;
+                                        do {
+                                            lng = (point1.lat() + Math.random() * 0.001).toFixed(4);
+                                        } while (lngGeoData == lng);
+
+                                        do {
+                                            lat = (point1.lng() + Math.random() * 0.001).toFixed(4);
+                                        } while (latGeoData == lat);
+
+                                        var point = new google.maps.LatLng(lng, lat);
+                                        console.log(point);
+                                        var marker = new google.maps.Marker({
+                                            position: point,
+                                            map: map,
+                                            title: "",
+                                            draggable: true, weight: 100
+                                        });
+                                        marker.setMap(null);
+                                        waypts.push({location: point, stopover: true, weight: 100});
+                                        google.maps.event.trigger(directionsDisplay, "directions_changed", point);
+                                    }
+                                }
+                            }
+                        }
+                        directionsDisplay.addListener('directions_changed', (function (i) {
+                            return function () {
+                                console.log("triggered");
+                                var directions = directionsDisplay.getDirections();
+                                var new_start = directions.routes[0].legs[0].start_location;
+                                var new_end = directions.routes[0].legs[0].end_location;
+                                if ((new_start.toString() !== start.toString()) || (new_end.toString() !== end.toString())) {
+                                    // Remove every route from map
+                                    for (var j = 0; j < directionsDisplays.length; j++) {
+                                        directionsDisplays[j].setMap(null);
+                                    }
+                                    console.log(new_start);
+                                    console.log(new_end);
+                                    // Redraw routes with new start/end coordinates
+                                    calculateAndDisplayRoute(new_start, new_end);
+                                }
+                            }
+                        })(i));
+                    }
+                } else {
+                    $("#error").append("Unable to retrieve your route<br />");
+                }
+            });
+
+        });
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdfQmesDwc0rVFKmvtw-QM3ac_h9TExec&callback=initMap">
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</body>
+</html>

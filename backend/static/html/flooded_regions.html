@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+        #map {
+            height: 100%;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<button type="submit" onclick="return exportGeoJson()">submit</button>
+<button type="submit" onclick="return clearData()">clear</button>
+<script>
+    var map;
+    var markers=[];
+    var path, service, poly;
+    var directions=[];
+    var position1, position2;
+    var directionsDisplay=null;
+    var directions = []
+    function initMap() {
+
+        var myLatlng = {lat: 12.945364, lng: 80.235101};
+        var chennai = new google.maps.LatLng(13.052138, 80.251608);
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 10,
+            center: chennai
+        });
+        map.data.loadGeoJson('/static/html/data.geojson');
+        poly = new google.maps.Polyline({
+            strokeColor: '#000000',
+            strokeOpacity: 1.0,
+            strokeWeight: 3
+        });
+
+        path = new google.maps.MVCArray(),
+            service = new google.maps.DirectionsService(), poly;
+
+        poly.setMap(map);
+        // google.maps.event.addListener(map, 'click', function (event) {
+        //     mapZoom = map.getZoom();
+        //     startLocation = event.latLng;
+        //     setTimeout(placeMarker, 600);
+        // });
+        //
+        // function placeMarker() {
+        //     if (mapZoom == map.getZoom()) {
+        //         new google.maps.Marker({position: location, map: map});
+        //     }
+        // }
+
+        map.addListener('click', function (e) {
+            placeMarker(e.latLng, map);
+        });
+
+        function placeMarker(position, map) {
+            // var path = poly.getPath();
+            // path.push(position);
+            // var marker = new google.maps.Marker({
+            //     position: position,
+            //     map: map,
+            //     title: '#' + path.getLength(),
+            // });
+            // if (!check_is_in_or_out(marker)) {
+            //     alert("not in range");
+            //     return;
+            // }
+            // markers.push(marker);
+            // map.panTo(position);
+
+            if(position1==null) {
+                position1 = position;
+                var marker = new google.maps.Marker({
+                        position: position,
+                        map: map,
+                        title: '#' + path.getLength(),
+                    });
+                markers.push(marker);
+            }
+            else {
+                if(position2!=null) {
+                    console.log("clearing position2")
+
+                    for (i = 0; i < path.left; i++) {
+                        path[i].setMap(null);
+                    }
+
+                    for (i = 1; i < markers.length; i++)
+                        markers[i].setMap(null);
+
+                    for (i = 0; i < directions.length; i++) {
+                        directions[i].setMap(null);
+                    }
+
+                    position2=null;
+
+                }
+                position2 = position;
+                var marker = new google.maps.Marker({
+                    position: position,
+                    map: map,
+                    title: '#' + path.getLength(),
+                });
+                markers.push(marker);
+            }
+            if(position1!=null && position2!=null){
+                service.route({
+                    origin: position1,
+                    destination: position2,
+                    travelMode: google.maps.DirectionsTravelMode.DRIVING
+                }, function (result, status) {
+                    if (status == google.maps.DirectionsStatus.OK) {
+                        console.log("foudn");
+                        for (var i = 0, len = result.routes[0].overview_path.length;
+                             i < len; i++) {
+                            path.push(result.routes[0].overview_path[i]);
+                            directionsDisplay = new google.maps.DirectionsRenderer({
+                                map: map,
+                                directions: result,
+                                panel: document.getElementById('right-panel')
+                            });
+                            directions.push(directionsDisplay);
+                        }
+                    }else{console.log("not foudn");}
+                });
+            }
+        }
+    }
+
+    function getjson() {
+        console.log("vrfvr");
+        map.data.toGeoJson(function (json) {
+            console.log(json);
+        });
+    }
+
+    function exportGeoJson() {
+        var geoJson = {
+            "type": "FeatureCollection",
+            "features": []
+        };
+        var polylineFeature = {
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": []
+            },
+            "properties": {"weight": 100}
+        };
+        for (var i = 0; i < directions.length; i++) {
+            var d = directions[i].getDirections()
+            pointsArray = d.routes[0].overview_path;
+            var pts = [];
+            for (var i = 0; i < pointsArray.length; i++) {
+                polylineFeature.geometry.coordinates.push([pointsArray[i].lng(), pointsArray[i].lat()]);
+            }
+            geoJson.features.push(polylineFeature);
+        }
+        console.log(JSON.stringify(geoJson));
+
+        $.ajax({
+            url: "update-geo-data",
+            data: JSON.stringify(geoJson),
+            type: 'POST',
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                $('#target').html(data.msg);
+            },
+
+        });
+
+
+
+        // poly.setPath([]);
+        // map.data.addGeoJson(geoJson);
+        // // Set the stroke width, and fill color for each polygon
+        // map.data.setStyle({
+        //     strokeColor: 'green',
+        //     strokeWeight: 2
+        // });
+        // map.data.toGeoJson(function (data) {
+        //     console.log(JSON.stringify(data));
+        // });
+    }
+
+    function clearData(){
+        poly.setMap(null);
+        for (var i = 0; i < markers.length; i++) {
+            markers[i].setMap(null);
+        }
+        for (var i = 0; i < directions.length; i++) {
+            directions[i].setMap(null);
+        }
+    }
+
+    function check_is_in_or_out(marker) {
+        return map.getBounds().contains(marker.getPosition());
+    }
+
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdfQmesDwc0rVFKmvtw-QM3ac_h9TExec&callback=initMap">
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</body>
+</html>
