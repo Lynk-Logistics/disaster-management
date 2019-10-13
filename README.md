@@ -20,4 +20,8 @@
   - Later on, after delivery the volunteers can update their location and make themselves available for the next session.
 
 **Tech stack:**
-  - Java, Spring boot, Mongodb, JQuery, Opencage (Geocoding API), Kafka
+  - Java, Spring boot, Mongodb, Kafka (Server Side)
+  - jQuery (Client Side)
+
+**Building the application**
+  - Install Java, Maven, MongoDB, Kafka.
