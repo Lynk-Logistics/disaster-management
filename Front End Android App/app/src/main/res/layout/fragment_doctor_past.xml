@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nizhal.lynkhacks.DoctorPastFragment">
+
+    <com.airbnb.lottie.LottieAnimationView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/animation_view1"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="140dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        app:lottie_rawRes="@raw/empty"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/animation_view1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:textAlignment="center"
+        android:text="Such Empty!\nNo Records Found!"
+        android:textSize="25dp"
+        android:fontFamily="@font/merlo_regular"/>
+
+</RelativeLayout>

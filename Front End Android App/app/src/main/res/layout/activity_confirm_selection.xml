@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nizhal.lynkhacks.ConfirmSelection">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/confirmSelecTitle"
+        android:text=" "
+        android:textSize="18dp"
+        android:fontFamily="@font/merlo_regular"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/confirmSelecTitle"
+        android:id="@+id/confirmSelecTitle2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="23dp"
+        android:fontFamily="@font/merlo_regular"
+        android:text="Confirm Doctor Search for"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/confirmSelecTitle2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="30dp"
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/selectionContent"
+        android:fontFamily="@font/merlo_regular"
+        android:text="General Physician" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/selectionContent"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/confirmSelecTitle3"
+        android:layout_marginTop="10dp"
+        android:textSize="23dp"
+        android:fontFamily="@font/merlo_regular"
+        android:text="within a radius of 1 km?"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchDoc"
+        android:background="@drawable/buttonstyle"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/white"
+        android:text="Search"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I am willing to go meet the doctor."
+        android:textSize="22dp"
+        android:id="@+id/checkToGo"
+        android:layout_below="@id/confirmSelecTitle3"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        />
+
+    <WebView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/webView3"
+        android:visibility="invisible"/>
+
+</RelativeLayout>

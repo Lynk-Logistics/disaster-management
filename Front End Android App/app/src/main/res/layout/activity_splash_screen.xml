@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nizhal.lynkhacks.SplashScreen"
+    android:clipToPadding="false"
+    android:background="#eee">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_name_colored"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="25dp"
+        android:textSize="30dp"
+        android:id="@+id/titleHead"
+        android:fontFamily="@font/merlo_regular"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleHead"
+        android:layout_marginLeft="25dp"
+        android:paddingTop="10dp"
+        android:textSize="18dp"
+        android:fontFamily="@font/merlo_regular"
+        android:text="Login to proceed."/>
+
+    <RelativeLayout
+        android:layout_width="320dp"
+        android:layout_height="330dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/curvedbg"
+        android:elevation="15dp">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            app:tabTextAppearance="@style/tab_text"
+            android:minHeight="?actionBarSize"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="@color/colorPrimary"
+            app:tabIndicatorHeight="3dp"
+            app:tabBackground="@color/white"
+            app:tabTextColor="#000000"
+            app:tabSelectedTextColor="@color/colorPrimary"
+            app:tabMode="fixed" />
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tabLayout"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+        </android.support.v4.view.ViewPager>
+
+    </RelativeLayout>
+
+</RelativeLayout>

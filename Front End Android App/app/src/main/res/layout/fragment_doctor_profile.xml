@@ -1,0 +1,149 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.nizhal.lynkhacks.DoctorProfileFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="15dp"
+        android:id="@+id/doc_lin">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="85dp"
+                android:layout_height="95dp"
+                android:src="@drawable/random"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/doc_name1"
+                android:text="Senuran Muthusamy"
+                android:textSize="23dp"
+                android:fontFamily="@font/merlo_regular"
+                android:layout_marginLeft="120dp"
+                android:layout_marginTop="30dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/doc_name1"
+                android:text="General Physician"
+                android:textSize="17dp"
+                android:id="@+id/doc_spec"
+                android:fontFamily="@font/merlo_regular"
+                android:layout_marginLeft="120dp"
+                android:layout_marginTop="2dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/dummy_tick1"
+                android:text="Verified!"
+                android:textSize="17dp"
+                android:layout_below="@+id/doc_spec"
+                android:fontFamily="@font/merlo_regular"
+                android:drawableLeft="@drawable/greentick"
+                android:drawablePadding="5dp"
+                android:layout_marginLeft="120dp"
+                android:layout_marginTop="2dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="14+ years experience"
+                android:textSize="17dp"
+                android:layout_below="@+id/dummy_tick1"
+                android:fontFamily="@font/merlo_regular"
+                android:layout_marginLeft="120dp"
+                android:layout_marginTop="2dp"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View android:id="@+id/separator1"
+        android:background="#eee"
+        android:layout_width = "match_parent"
+        android:layout_height="2dip"
+        android:layout_centerVertical ="true"
+        android:layout_marginTop="160dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentTop="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/separator1"
+        android:layout_marginTop="15dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Details"
+                android:textSize="20dp"
+                android:fontFamily="@font/merlo_regular"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mobile number\n+91 84562 44563"
+                android:layout_marginTop="45dp"
+                android:layout_marginLeft="20dp"
+                android:drawableLeft="@drawable/ic_local_phone_yellow_30dp"
+                android:textSize="20dp"
+                android:id="@+id/doc_mob1"
+                android:layout_marginRight="20dp"
+                android:padding="5dp"
+                android:fontFamily="@font/merlo_regular"
+                android:drawablePadding="25dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Location\nVadapani, Chennai"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:drawableLeft="@drawable/ic_location_on_yellow_30dp"
+                android:textSize="20dp"
+                android:layout_marginRight="20dp"
+                android:padding="5dp"
+                android:id="@+id/doc_loc1"
+                android:fontFamily="@font/merlo_regular"
+                android:layout_below="@+id/doc_mob1"
+                android:drawablePadding="25dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ratings and Patient's Served\n4.0 out of 5.0, 45 people"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:drawableLeft="@drawable/ic_star_yellow_30dp"
+                android:textSize="20dp"
+                android:layout_marginRight="20dp"
+                android:padding="5dp"
+                android:id="@+id/rat"
+                android:fontFamily="@font/merlo_regular"
+                android:layout_below="@+id/doc_loc1"
+                android:drawablePadding="25dp"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

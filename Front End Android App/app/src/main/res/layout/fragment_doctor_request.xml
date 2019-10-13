@@ -1,0 +1,142 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nizhal.lynkhacks.DoctorRequest">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.nizhal.lynkhacks.TestMaps"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:id="@+id/lin_over"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.airbnb.lottie.LottieAnimationView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/animation_view1"
+                android:layout_width="200dp"
+                android:layout_marginTop="140dp"
+                android:layout_height="200dp"
+                android:layout_centerHorizontal="true"
+                app:lottie_rawRes="@raw/navloading"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/animation_view1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:textAlignment="center"
+                android:text="Searching for Requests..."
+                android:textSize="25dp"
+                android:fontFamily="@font/merlo_regular"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:background="@color/white"
+        android:layout_margin="8dp"
+        android:id="@+id/checkStatus"
+        android:elevation="10dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/merlo_regular"
+                android:text="Name : "
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/user_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_name"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/merlo_regular"
+                android:maxLines="2"
+                android:maxWidth="350dp"
+                android:text="Address : "
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/dist_ooo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_address"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/merlo_regular"
+                android:maxLines="2"
+                android:maxWidth="350dp"
+                android:text="Distance : 0.8 km ~ 12 minutes"
+                android:textSize="18dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="5dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/acceptInvite"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/buttonstyle"
+                    android:text="ACCEPT"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/declineInvite"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/buttonstyle"
+                    android:text="DECLINE"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <WebView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/webView"
+        android:visibility="invisible"/>
+    <WebView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/webView2"
+        android:visibility="invisible"/>
+
+</RelativeLayout>

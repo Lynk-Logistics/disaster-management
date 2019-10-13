@@ -1,0 +1,44 @@
+{
+  "profession": [
+    {
+      "id": "1",
+      "name": "Child Specialist",
+      "image": "child"
+    },
+    {
+      "id": "2",
+      "name": "Dental Care",
+      "image": "dentist"
+    },
+    {
+      "id": "3",
+      "name": "ENT Specialist",
+      "image": "ent"
+    },
+    {
+      "id": "4",
+      "name": "Women's Health",
+      "image": "maternity"
+    },
+    {
+      "id": "5",
+      "name": "General Physician",
+      "image": "doctor"
+    },
+    {
+      "id": "6",
+      "name": "Lungs and Breathing",
+      "image": "breath"
+    },
+    {
+      "id": "7",
+      "name": "Heart Specialist",
+      "image": "heart"
+    },
+    {
+      "id": "8",
+      "name": "Brain and Nerve",
+      "image": "brain"
+    }
+  ]
+}

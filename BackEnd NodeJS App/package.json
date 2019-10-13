@@ -1,0 +1,29 @@
+{
+  "name": "shop_cart_try2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "ram",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "^1.18.3",
+    "connect-flash": "*",
+    "cookie-parser": "^1.4.1",
+    "cors": "^2.8.5",
+    "ejs": "^2.6.1",
+    "express": "*",
+    "express-handlebars": "*",
+    "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "http-server": "^0.11.1",
+    "mongodb": "*",
+    "mongoose": "*",
+    "nodemon": "^1.17.5"
+  }
+}
