@@ -1,0 +1,31 @@
+{
+  "name": "lynk-backend",
+  "version": "1.0.0",
+  "description": "Bakend for Flood App\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dc\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/codeDelights/lynk-backend.git"
+  },
+  "keywords": [
+    "Flood",
+    "disaster",
+    "help",
+    "tsunami"
+  ],
+  "author": "TriCore Squad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codeDelights/lynk-backend/issues"
+  },
+  "homepage": "https://github.com/codeDelights/lynk-backend#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.4"
+  }
+}
