@@ -42,7 +42,6 @@ class FoodFragment : NativeLocationFragment() {
                     val area = area_text_box.editableText.toString().trim()
                     val numberOfPeople = no_of_people_text_box.editableText.toString().trim()
                     val message = message_box.editableText.toString().trim()
-
                     val sendRequest = DisasterResources.FoodRequest(
                             latitude = location.a.latitude,
                             longitude = location.a.longitude,
