@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  catamaran_db:
+    image: postgres:11.2
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_PORT=5433
+      - POSTGRES_DB=catamaran_db
+    ports:
+      - 5432:5432
