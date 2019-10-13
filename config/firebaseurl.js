@@ -1,0 +1,1 @@
+module.exports = "<<firbase cloud messaging project url>>"
