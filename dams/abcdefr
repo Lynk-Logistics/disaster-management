@@ -1,0 +1,16 @@
+def relocation(request):
+	path = request.path
+    victim_id = path.split('/')[-1]
+    received_json_data = json.loads(request.body)
+    request_type = received_json_data['request_type']
+    safe_places = received_json_data['safe_places']
+    transportation = received_json_data['transportation']
+    vic_data_obj = Volunteer_Supplier_Victim.objects.get(id=victim_id)
+    if (transportation):
+    	transportation_details = {
+    		"requirement_id" = va.requirement_id_id
+    		"status" = va.status
+    	}
+    	return HttpResponse(json.dumps({"relocation_details": relocation_details}), content_type="application/json")
+    else:
+    	return HttpResponse(status=400)

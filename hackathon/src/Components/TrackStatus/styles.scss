@@ -1,0 +1,53 @@
+.track-status {
+
+    border-left: 2px solid grey;
+
+    
+
+    .status-card-disabled, .status-card-enabled {
+        border: none;
+        font-size: 0.8 rem;
+        height: 70px;
+        width: 700px;
+        margin: 30px 20px;
+
+        span{
+            margin: 25px 10px;
+            display: inline-block;
+            border: none
+        }
+
+        .button-status{
+          font-size: 30px;
+          margin: 15px 5px;
+          padding-left: 10px;
+          padding-right: 10px;
+          float: left;
+          border: none;
+          border-radius: 50px;
+         // background-color: rgb(89, 153, 5);
+		  color: white;
+		  text-transform: uppercase;
+		  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+    }
+
+    .status-card-enabled {
+        color: #707070;
+        .button-status {
+         background-color: rgb(89, 153, 5);
+        }
+    }
+
+    .status-card-disabled {
+
+         color: #ada3a3;
+         .button-status {
+             background-color: #ada3a3;
+         }
+
+
+    }
+
+}
