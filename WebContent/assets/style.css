@@ -1,0 +1,61 @@
+html, body {
+	font-family: 'Open Sans';
+}
+
+.latest {
+	margin: 20px !important;
+}
+
+.underline {
+	text-decoration: underline;
+}
+.error{
+	color:red!important;
+}
+
+
+.notification > button.delete {
+  border: none;
+}
+
+
+#notification{
+	display:none;
+	position:fixed;
+	top:0;
+	right:0;
+}
+/* .port{
+	min-width:250px;
+	overflow:hidden;
+}
+.port .card{
+	height:300px;
+} */
+#portals{
+	width:100%;
+	overflow:scroll;
+}
+.green{
+	background: #00d1b2;
+	color:#ffffff!important;
+}
+#tabnav{
+	background:#00d1b2;
+	padding:20px;
+}
+#tabnav.is-active{
+	background: #ffffff;
+	
+	color:#000000;	
+}
+.tabcont{
+	border:2px solid #00d1b2!important;
+}
+#map{
+	height:300px;
+}
+.fullwidth{
+	width:95%;
+	margin:0 auto;
+}
