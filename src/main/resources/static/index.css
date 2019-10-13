@@ -1,0 +1,45 @@
+.button-wrapper{
+    width : 100%;
+    text-align : center;
+}
+
+.button{
+    margin: 10px;
+    width : 75%;
+    background-color: #5ecFff;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.form input:not([type=button]), .form textarea {
+  width: 90%;
+  height : 25px;
+  margin: 5px;
+  border: 2px solid black;
+}
+div.form{
+    background-color : #ddd;
+    width : 70%;
+}
+
+.form-wrapper{
+    padding-left:15%;
+}
+
+.submit-button{
+ margin: 10px;
+    width: 30%;
+    background-color: #5ecFff;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}

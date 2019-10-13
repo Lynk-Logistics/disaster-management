@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FRS System</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="functions.js"></script>
+</head>
+<body>
+<div id="dashboard" style="display:none">
+<div class="button-wrapper"> <input class="button" type="button" name="Provide Place" value = "Provide Place" onclick="togglePlaceForm();"/> </div>
+
+	<div class="form-wrapper">
+	<div id = "placeform" class="form" style="display:none">
+		<div>
+			<textarea id = "place_address" name = "address" placeholder="Address"></textarea>
+		</div>
+		<div>
+			<input type="text" id = "owner_name" placeholder="Name"/>
+		</div>
+		<div>
+			<input type="number" id = "owner_phone_num" placeholder="Contact Number"/>
+		</div>
+		<button class="submit-button" onclick="addPlace();"> Register Place </button>
+	</div>
+	</div>
+
+<div class = "button-wrapper"><input class="button" type="button" id="ngo" name="Add NGO" value="Add your NGO.."/></div>
+
+	<div class="form-wrapper">
+	<div id="ngoform" class="form" style="display: none">
+		<select id = "places"></select><br>
+		<input id="ngoName" placeholder="Enter NGO Name"/>
+		<input class="submit-button" type="button" id="submitNGO" value="Enter">
+	</div>
+	</div>
+
+<div class = "button-wrapper"><input class="button" type="button" id="signup" value="Volunteer Signup"/><br></div>
+
+	<div class="form-wrapper">
+	<div id="signUpForm" class="form" style="display:none">
+		<input type="text" id="username" placeholder="username"/>
+		<input type="text" id="password" placeholder="password"/>
+		<input type="text" id="location" placeholder="location"/>
+		<input type="text" id="phoneNo" placeholder="Phone Number"/>
+		<input type="text" id="age" placeholder="Age"/>
+		<input class="submit-button" type="button" id="submitVolunteer" value="Submit">
+	</div>
+	</div>
+
+
+<div class = "button-wrapper"> <input class="button" type="button" id="login" value="Volunteer Login"/></div>
+
+	<div class="form-wrapper">
+	<div id="loginForm" class="form" style="display:none">
+		<input type="text" id="username_login" placeholder="username">
+		<input type="text" id="password_login" placeholder="password">
+		<input class="submit-button" type="button" id="submitLogin" value="Submit">
+	</div>
+	</div>
+
+
+<div class="button-wrapper"><input class="button" type="button" id="supply" name="Donate" value = "Donate things"/> </div>
+
+	<div class="form-wrapper">
+<div id="supplyForm" class="form" style="display:none">
+	<input type="text" id="supplyName" placeholder="Enter Your Name"/>
+	<input type="text" id="supplyaddress" placeholder="Enter Your Address"/>
+	<input type="text" id="peopleCount" placeholder="People Needed"/>
+	<input type="text" id="phoneNumber" placeholder="Enter your phone number"/>
+	<div id="items">
+	</div>
+	<input class="submit-button" type="button" id="Item" value="Add Item"/>
+	<input class="submit-button" type="button" id="submitSuplpy" value="Enter">
+</div>
+	</div>
+
+<div class = "button-wrapper"><input class="button" type="button" id="getHubDetails" name="getHubDetails" value = "Get Hub Details"/> </div>
+	<table id="records_table" border='1' style="display:none;width:100%;">
+		<tr>
+			<th>address</th>
+			<th>owner name</th>
+			<th>owner number</th>
+		</tr>
+	</table>
+
+</div>
+
+<div id = "volunteertab" style="display:none">
+	<div id = "current_assignment"></div>
+	<input style="display:none" class="button" type="button" id="volunteer"/>
+</div>
+
+</body>
+</html>
