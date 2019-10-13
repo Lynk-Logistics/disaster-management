@@ -16,7 +16,7 @@ Catamaran aims to solve this!
 It also uses `Twilio` to send messages through whatsapp.
 
 ### Architecture
-
+```
 +---------------------------------------------------------------------------+
 |                                API                                        |
 |   +--------------------------------------------------------------------+  |
@@ -48,7 +48,7 @@ It also uses `Twilio` to send messages through whatsapp.
 |                                                                           |
 |                                                                           |
 +---------------------------------------------------------------------------+
-
+```
 We use onion architecture in which the layers talk only to the layer immediately below them. 
 
 ## Domain models: 
