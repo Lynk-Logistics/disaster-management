@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Volunteer.VictimHelpMap"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/llStates"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/spinner_border"
+        app:layout_constraintStart_toStartOf="@+id/startGuideline"
+        app:layout_constraintEnd_toEndOf="@+id/endGuideline"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:text="@string/state"
+            android:gravity="center"
+            android:textColor="@color/black" />
+
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:id="@+id/spState"
+            android:layout_width="0dp"
+            android:layout_weight="7"
+            android:layout_height="50dp"
+            android:textStyle="bold"
+            app:ms_background_color="@color/white"
+            app:ms_arrow_tint="@color/black"
+            app:ms_text_color="@color/black"
+            app:ms_hint_color="@color/black"
+            android:layout_marginTop="5dp"
+            android:padding="2dp"
+            android:layout_marginEnd="2dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llCity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/spinner_border"
+        app:layout_constraintStart_toStartOf="@+id/startGuideline"
+        app:layout_constraintEnd_toEndOf="@+id/endGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/llStates">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:text="@string/city"
+            android:gravity="center"
+            android:textColor="@color/black" />
+
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:id="@+id/spCity"
+            android:layout_width="0dp"
+            android:layout_weight="7"
+            android:layout_height="50dp"
+            android:textStyle="bold"
+            app:ms_background_color="@color/white"
+            app:ms_arrow_tint="@color/black"
+            app:ms_text_color="@color/black"
+            app:ms_hint_color="@color/black"
+            android:layout_marginTop="5dp"
+            android:padding="2dp"
+            android:layout_marginEnd="2dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llArea"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/spinner_border"
+        app:layout_constraintStart_toStartOf="@+id/startGuideline"
+        app:layout_constraintEnd_toEndOf="@+id/endGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/llCity">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:text="@string/area"
+            android:gravity="center"
+            android:textColor="@color/black" />
+
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:id="@+id/spArea"
+            android:layout_width="0dp"
+            android:layout_weight="7"
+            android:layout_height="50dp"
+            android:textStyle="bold"
+            app:ms_background_color="@color/white"
+            app:ms_arrow_tint="@color/black"
+            app:ms_text_color="@color/black"
+            app:ms_hint_color="@color/black"
+            android:layout_marginTop="5dp"
+            android:padding="2dp"
+            android:layout_marginEnd="2dp" />
+
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/startGuideline1"
+        app:layout_constraintEnd_toEndOf="@+id/endGuideline1"
+        app:layout_constraintTop_toBottomOf="@+id/llArea"
+        app:layout_constraintBottom_toTopOf="@+id/bottomGuideline"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/startGuideline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/endGuideline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/startGuideline1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/endGuideline1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomGuideline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".98" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="arrays_enhance">
+        <item>@string/none_enhance</item>
+        <item>@string/auto</item>
+        <item>@string/enhance</item>
+        <item>@string/enhance_sharp</item>
+    </string-array>
+</resources>

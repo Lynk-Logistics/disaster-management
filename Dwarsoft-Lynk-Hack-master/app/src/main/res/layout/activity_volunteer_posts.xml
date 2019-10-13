@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Activity.Volunteer.VolunteerPosts"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:layout_marginTop="40dp"
+        android:layout_alignParentBottom="true"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:layout_marginBottom="20dp"
+        android:textSize="20sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_below="@id/tvtopheader"
+        android:layout_above="@id/tvHeader" />
+
+    <TextView
+        android:id="@+id/tvtopheader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/my_posts"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentTop="true"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+</RelativeLayout>
