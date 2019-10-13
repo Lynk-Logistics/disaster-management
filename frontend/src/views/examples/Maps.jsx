@@ -125,7 +125,7 @@ class Maps extends React.Component {
           <Row className="mt-5">
             <div className="col">
               <Card className="shadow border-0">
-                {/* <Iframe
+                <Iframe
                   url={this.state.iframeUrl}
                   // width="450px"
                   height="450px"
@@ -133,7 +133,7 @@ class Maps extends React.Component {
                   className="myClassname"
                   display="initial"
                   position="relative"
-                ></Iframe> */}
+                ></Iframe>
               </Card>
             </div>
           </Row>

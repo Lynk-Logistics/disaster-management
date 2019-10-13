@@ -133,7 +133,7 @@ class Sidebar extends React.Component {
                 className="navbar-brand-img"
                 src={logo.imgSrc}
               /> */}
-              <h2>Bee Safe</h2>
+              <h2>Lynk Hack App</h2>
             </NavbarBrand>
           ) : null}
           {/* User */}
