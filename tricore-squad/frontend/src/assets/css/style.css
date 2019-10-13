@@ -1,0 +1,426 @@
+@charset "utf-8";
+/* CSS Document */ 
+@import url(bootstrap.min.css);
+@import url(font-awesome.min.css);
+@import url(bs-slider.css);
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700');
+
+
+
+
+*{margin:0px; padding:0px; outline:none !important;}
+body{
+	font-family: 'Poppins', sans-serif !important;
+	font-size:normal;
+	font-weight:normal;
+	overflow-x:hidden;
+}
+a, a:hover, a:focus{
+	text-decoration:none;
+	color:#1a1a1a;	
+}
+ul, p{margin-bottom:0;}
+#dashboard, #dashboard1{
+	background: url("../images/bg.jpg") no-repeat;
+	background-position: center;
+	background-size: cover;
+	min-height: 100vh;
+	position: relative;
+	padding:50px 0;
+}
+#dashboard:before, #dashboard1:before{
+	position:absolute;
+	content:'';
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background: rgba(0,0,0,0.9);
+}
+#dashboard h1, #dashboard h2{
+	position:relative;
+	z-index: 3;
+}
+#dashboard h1{
+	margin:0 0 50px;
+	font-size:60px;
+	color:#ffd700;
+	font-weight: 700;
+	text-align: center;
+}
+#dashboard h1 span{
+	display: block;
+	padding-top:10px;
+	color:#fff;
+	font-size:16px;
+}
+
+#dashboard h2{
+	font-size:36px;
+	margin:0 0 40px;
+	text-align: center;
+	color:#fff;
+}
+.board{	
+	padding: 20px;
+	position:relative;
+	transition: all .5s ease;
+	background-position: center;
+	background-size: cover;
+	text-align: center;
+	cursor: pointer;
+}
+.board:before{
+	position:absolute;
+	content: '';
+	background: rgba(94, 94, 94, 0.9);
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;	
+}
+.v-bg1{
+	background:url("../images/victim.jpg") no-repeat;
+}
+.v-bg2{
+	background:url("../images/volunteer.jpg") no-repeat;
+}
+.v-bg3{
+	background:url("../images/sponsors.jpg") no-repeat;
+}
+.v-bg4{
+	background:url("../images/donate.jpg") no-repeat;
+}
+.board:hover:before{
+	background:rgba(255,255,255,0.8);
+}
+.board .fa, .board h4{transition:all .5s ease;}
+.board .fa{
+	font-size:65px;
+	color:#ffd700;
+	position: relative;
+	z-index: 5;
+}
+.board h4{
+	font-size:20px;
+	margin: 0;
+	padding-top:20px;color:#fff;z-index: 5;
+	position:relative;
+}
+.board:hover .fa, .board:hover h4{color:#1a1a1a;}
+.other-lst ul{margin-top:100px;}
+.other-lst ul li{
+	position:relative;
+	padding-left:25px;
+	display: inline-block;
+	margin:0 25px;
+}
+.other-lst ul li a{
+	color:#fff;
+	font-size:15px;
+}
+.other-lst ul li:before{
+	position:absolute;
+	font-family:'FontAwesome';
+	color:#ffd700;
+	left:0;
+	font-size:15px;
+}
+
+.other-lst ul li:nth-child(1):before{
+	content:'\f0fa';
+}
+.other-lst ul li:nth-child(2):before{
+	content:'\f2bd';
+}
+.other-lst ul li:nth-child(3):before{
+	content:'\f2b9';
+}
+.other-lst ul li:nth-child(4):before{
+	content:'\f0ac';
+}
+.other-lst ul li:nth-child(5):before{
+	content:'\f059';
+}
+/*Mobile Register*/
+.check-mbl{
+	background:#ffd700;
+	padding:30px;
+	border-radius: 10px
+	
+}
+.mbl-tit{color:#fff;}
+.mbl-tit, .mbl-tit1{
+	font-size:24px;
+	margin: 0 0 30px;
+	text-align: center;
+}
+.form-control{
+	height:40px;
+	border:1px solid rgba(0,0,0,0.25);
+	box-shadow: none;
+}
+.smt-btn{
+	background:#1a1a1a;
+	padding:7px 15px;
+	color:#fff;
+	font-size:14px;
+	border:1px solid #1a1a1a;
+	transition: all .5s ease;
+}
+.smt-btn:hover, .smt-btn:focus{
+	color:#ffd700;
+	background: #1a1a1a;
+	border:1px solid #1a1a1a;
+}
+/*End Mobile Register*/
+
+/*Volunteer Reg*/
+.mbl-tit1{
+	color:#ffd700;
+	font-size:30px;
+	font-weight: 700;
+}
+.vluntr-frm label{
+	color:#fff;
+	font-size:14px;
+	font-weight: 400;
+	margin-bottom: 10px;
+}
+.vluntr-frm .form-control{
+	background: rgba(255,255,255,0.8);
+	color:#1a1a1a;
+	font-size:14px;
+}
+.form-control:focus{
+	box-shadow: none;
+	border-color:#ffd700;
+}
+.vluntr-frm .form-group{margin-bottom:25px;}
+.checkbox{margin-bottom:0;}
+.checkbox label{margin-bottom:0;}
+input[type=checkbox]{
+	-webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #ddd;
+	position: relative;
+}
+input[type=checkbox]:before{
+	position: absolute;
+	content: '\f00c';
+	color:#fff;
+	font-family:'FontAwesome';
+	font-size:10px;
+	background:#ffd700;
+	width: 12px;
+    height: 12px;
+	border:1px solid #ffd700;
+	opacity: 0;
+	visibility: hidden;
+	transition: all .5s ease;
+}
+input[type=checkbox]:checked:before{
+	opacity: 1;
+	visibility: visible;
+}
+.vluntr-frm .smt-btn{
+	background:#ffd700 !important;
+	color:#000 !important;
+}
+.vluntr-frm .smt-btn:hover, .vluntr-frm .smt-btn:focus{
+	background:#1a1a1a !important;
+	color:#fff !important;
+}
+/*End Volunteer Reg*/
+
+/*Victim Status*/
+.new-cmt a{
+	background:#ffd700;
+	padding:9px 15px;
+	text-align: center;
+	color:#1a1a1a;
+	border-radius: 5px;
+	display: inline-block;
+}
+.search{
+	text-align:right;
+}
+.search form input{
+	position:relative;
+}
+.srh-btn{
+	position: absolute;
+    right: 15px;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: #ffd700;
+    border: 1px solid #ffd700;
+    color: #1a1a1a;
+	border-radius:0 5px 5px 0;	
+}
+.status-tbl{
+	width:50%;
+	margin: 0 auto 50px;
+}
+.status-tbl li{
+	width:40%;
+	margin: 0 15px;
+	text-align: center;
+}
+.status-tbl li a{
+	background: #fff;
+	color:#1a1a1a;
+	transition: all .5s ease;
+	font-size: 20px;
+	font-weight: 600;
+}
+.status-tbl li.active a, .status-tbl li.active a:hover, 
+.status-tbl li.active a:focus,
+.status-tbl li a:hover, .status-tbl li a:focus{
+	background:#ffd700;
+	color:#1a1a1a;
+}
+.info-tbl{
+	margin-top:30px;
+	background: #fff;
+}
+.info-tbl tr th{
+	background: #ffd700;
+	color:#1a1a1a;
+	text-align: center;
+	font-size:16px;
+	padding:15px !important;
+}
+.info-tbl tr td{padding:8px 15px !important;vertical-align: middle !important;}
+.abt-cmts{
+	height: 370px;
+    overflow-y: scroll;
+	margin-bottom: 40px;
+}
+.cmt-tbl h4{
+	font-size:16px;
+	margin: 0;
+}
+.cmt-tbl h4 span{
+	display:block;
+	padding-top: 10px;
+	font-size:14px;
+	color:#000;
+}
+.cmt-tbl p{display:inline-block;padding-left: 10px;}
+.cmt-tbl tr td{
+	border-top:0 !important;
+	vertical-align: middle !important;
+	padding: 15px !important;
+}
+.cmt-tbl tr td .fa{padding-right:10px;}
+.cmt-tbl tr:nth-child(odd) td{background:#f2f2f2;}
+.cmt-tbl tr:nth-child(even) td{background:#e7e7e7;}
+.cmt-tbl tr th{border-bottom:0 !important;text-align: center;font-size:18px;padding:15px 0 20px !important;}
+.mre{margin-top:20px;display: inline-block;width:100%;}
+.modal-header h4{
+	color:#ffd700;
+	font-size: 22px;
+	font-weight: 600;
+	margin: 0;
+	text-align: center;
+}
+.modal-header .close{
+	opacity:1;
+	margin-top: -25px;
+	margin-right: -25px;
+	width:30px;
+	height:30px;
+	background:#ffd700;
+	color:#000;
+	border-radius: 50%;
+	text-shadow: none;
+}
+/*End Victim Status*/ 
+/*Doante Page*/
+.donate-amt p, .acc-det p a{color:#fff;text-align: justify;line-height: 25px;}
+.acc-det{
+	background:rgba(0,0,0,0.5);
+	padding:15px;
+	margin-top: 30px;
+	min-height: 320px;
+}
+.acc-det img{
+	margin:0 auto;
+	display: block;
+}
+.acc-det .mbl-tit1{font-size:18px;text-align:center;}
+.text-ctr{text-align:center !important;}
+.mtp{margin-top:30px;}
+/*End Donate Page*/
+/*missing peoples*/
+.recover-tbl{width:60%;margin: 0 auto 50px;}
+.recover-tbl li{
+	display:inline-block;
+}
+.recover-tbl li a{padding:8px 15px;border-radius: 5px;display: inline-block;width:100%;}
+.hsptl tr th{text-align:left;}
+.missing-mdl{
+	width:100% !important;
+	display: inline-block !important;
+}
+.share-me{cursor:pointer;}
+.share-page.show{
+	height:auto;
+	visibility: visible;	
+	opacity: 1;
+	margin-top: 10px;
+}
+/*End missing peoples*/
+
+@media(min-width:320px) and (max-width:479px){
+	
+}
+@media(min-width:480px) and (max-width:520px){
+	#dashboard .col-md-4{width:50%;float: left;}
+	.other-lst ul li{width:50%;float: left;margin: 0;}
+}
+@media(min-width:521px) and (max-width:767px){
+	#dashboard .col-md-4{width:33.33%;float: left;}
+	.other-lst ul li{width:33.33%;float: left;margin: 0;}
+	.other-lst ul li a{font-size:14px;}
+}
+@media(max-width:767px){
+	#dashboard{padding:30px 0;}
+	#dashboard h1{font-size:36px;}
+	#dashboard h2{font-size:28px;}
+	#dashboard h4{font-size:18px;}
+	.board{margin-bottom:15px;}
+	.other-lst ul{margin-top:30px;}
+	.other-lst ul li{padding-bottom:10px;line-height: 24px;}
+}
+@media(min-width:768px) and (max-width:991px){
+	
+}
+@media(min-width:768px) and (max-width:1024px){
+	.other-lst ul li{padding-bottom:10px;line-height: 24px;}
+	.other-lst ul li a{font-size:14px;}
+}
+@media(min-width:992px) and (max-width:1024px){
+	.other-lst ul li{margin:0 10px;font-size:14px;}
+}
+
+@media(min-width:1024px){
+	
+	#dashboard, .other-lst ul, .cmt-sec .row{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.ft-rt{float:right;}
+	.modal-dialog{
+		width:900px;
+	}
+	.flx-end{
+		display:flex;
+		justify-content: flex-end;
+	}
+	
+}

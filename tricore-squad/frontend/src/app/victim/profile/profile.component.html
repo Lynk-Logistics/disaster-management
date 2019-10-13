@@ -1,0 +1,198 @@
+<div class="tab-content">
+    <div class="tab-pane fade in active" id="req-status">
+        <div class="row flx-end">
+            <div class="col-md-2">
+                <div class="new-cmt">
+                    <p><a href="victim-register.html">Add New Request</a></p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="search">
+                    <!-- <form> -->
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="search-victim" placeholder="Search">
+                        <button type="button" class="srh-btn"><i class="fa fa-search"></i></button>
+                    </div>
+                    <!-- </form> -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-bordered info-tbl">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Location</th>
+                                <th>Mobile</th>
+                                <th>Help Required</th>
+                                <th>No.of Persons</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let req of requests">
+                                <td>{{req.name}}</td>
+                                <td>{{req.address}}</td>
+                                <td align="center">{{req.mobileNo}}</td>
+                                <td><span *ngFor="let need of req.needs">{{need}}</span></td>
+                                <td align="center">{{req.headCount}}</td>
+                                <td align="center"><button type="button" class="btn smt-btn" data-toggle="modal"
+                                        data-target="#myModal">Open</button></td>
+                            </tr>
+                            <!-- <tr>
+                                <td>Ram</td>
+                                <td>Tiruvanmiyur, Chennai</td>
+                                <td align="center">9600859243</td>
+                                <td>Water, Clothes</td>
+                                <td align="center">10</td>
+                                <td align="center"><button type="button" class="btn smt-btn" data-toggle="modal"
+                                        data-target="#myModal">Open</button></td>
+                            </tr>
+                            <tr>
+                                <td>Parameswari</td>
+                                <td>Velacherry, Chennai</td>
+                                <td align="center">9600859243</td>
+                                <td>Shellter</td>
+                                <td align="center">05</td>
+                                <td align="center"><button type="button" class="btn smt-btn" data-toggle="modal"
+                                        data-target="#myModal">Open</button></td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4>Status Report</h4>
+            </div>
+            <div class="modal-body">
+                <div class="abt-cmts">
+                    <div class="table-responsive">
+                        <table class="table cmt-tbl">
+                            <thead>
+                                <tr>
+                                    <th width="23%">Comment Added By</th>
+                                    <th width="62%">Comments</th>
+                                    <th width="15%">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <h4> <i class="fa fa-user" aria-hidden="true"></i> Karthik
+                                            <small>(Volunteer)</small> <span><i class="fa fa-phone"
+                                                    aria-hidden="true"></i> <a href="tel:+919600859243"> 96008
+                                                    59243</a></span></h4>
+                                    </td>
+                                    <td>
+                                        <p>Food Provided to 10 pepoples, we need food for 10 more peoples.</p>
+                                    </td>
+                                    <td><i class="fa fa-calendar" aria-hidden="true"></i>
+                                        <p>12.10.2019</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h4><i class="fa fa-user" aria-hidden="true"></i> Ram <small>(Sponsor)</small>
+                                            <span><i class="fa fa-phone" aria-hidden="true"></i><a
+                                                    href="tel:+919600859243">96008 59243</a></span></h4>
+                                    </td>
+                                    <td>
+                                        <p>I am ready to donate donate some amount and blankets for victims, any
+                                            volunteers come and collect it, my location is vellacherry, no70 - 2nd st,
+                                            sarathi nagar.</p>
+                                    </td>
+                                    <td><i class="fa fa-calendar" aria-hidden="true"></i>
+                                        <p>12.10.2019</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h4><i class="fa fa-user" aria-hidden="true"></i>Eswari
+                                            <small>(Victim)</small><span><i class="fa fa-phone"
+                                                    aria-hidden="true"></i><a href="tel:+919600859243">96008
+                                                    59243</a></span></h4>
+                                    </td>
+                                    <td>
+                                        <p>We need blankets for 10 pepoples</p>
+                                    </td>
+                                    <td><i class="fa fa-calendar" aria-hidden="true"></i>
+                                        <p>12.10.2019</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h4> <i class="fa fa-user" aria-hidden="true"></i> Karthik
+                                            <small>(Volunteer)</small> <span><i class="fa fa-phone"
+                                                    aria-hidden="true"></i> <a href="tel:+919600859243"> 96008
+                                                    59243</a></span></h4>
+                                    </td>
+                                    <td>
+                                        <p>Food Provided to 10 pepoples, we need food for 10 more peoples.</p>
+                                    </td>
+                                    <td><i class="fa fa-calendar" aria-hidden="true"></i>
+                                        <p>12.10.2019</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h4><i class="fa fa-user" aria-hidden="true"></i> Ram <small>(Sponsor)</small>
+                                            <span><i class="fa fa-phone" aria-hidden="true"></i><a
+                                                    href="tel:+919600859243">96008 59243</a></span></h4>
+                                    </td>
+                                    <td>
+                                        <p>I am ready to donate donate some amount and blankets for victims, any
+                                            volunteers come and collect it, my location is vellacherry, no70 - 2nd st,
+                                            sarathi nagar.</p>
+                                    </td>
+                                    <td><i class="fa fa-calendar" aria-hidden="true"></i>
+                                        <p>12.10.2019</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h4><i class="fa fa-user" aria-hidden="true"></i>Eswari
+                                            <small>(Victim)</small><span><i class="fa fa-phone"
+                                                    aria-hidden="true"></i><a href="tel:+919600859243">96008
+                                                    59243</a></span></h4>
+                                    </td>
+                                    <td>
+                                        <p>We need blankets for 10 pepoples</p>
+                                    </td>
+                                    <td><i class="fa fa-calendar" aria-hidden="true"></i>
+                                        <p>12.10.2019</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!--End Comments table-->
+                <!--Add Comment / Description-->
+                <div class="extra-cmt">
+                    <button type="submit" class="btn btn-default ft-rt smt-btn">Add Comment</button>
+                    <div class="mre">
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="mr-cmt">
+                        </div>
+                        <div class="col-md-2">
+                            <button type="submit" class="btn btn-default smt-btn">Close</button>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!--End Description-->
+            </div>
+        </div>
+    </div>
+</div>

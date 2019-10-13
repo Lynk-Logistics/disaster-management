@@ -1,0 +1,147 @@
+<section id="dashboard1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="list-unstyled status-tbl recover-tbl">
+                    <li class="active"><a href="missing-peoples-list.html">Missing Persons List</a></li>
+                    <li><a href="recovered-peoples-list.html">Recoverd Persons List</a></li>
+                </ul>
+
+
+                <div class="row flx-end">
+                    <div class="col-md-2">
+                        <div class="new-cmt">
+                            <p><a href="#" data-toggle="modal" data-target="#missing">Add New Request</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="search">
+                            <!-- <form> -->
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="search-victim" placeholder="Search">
+                                    <button type="button" class="srh-btn"><i class="fa fa-search"></i></button>
+                                </div>
+                            <!-- </form> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-responsive info-tbl">
+                        <thead>
+                            <tr>
+                                <th>S.no</th>
+                                <th>Name</th>
+                                <th>Gender</th>
+                                <th>Age</th>
+
+                                <th>Description</th>
+                                <th>Photo</th>
+                                <th>Contact Person Name</th>
+                                <th>Contact No</th>
+                                <th>Contact address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Karhik</td>
+                                <td>Male</td>
+                                <td>22</td>
+
+                                <td>Missed yesterday</td>
+                                <td><img src="./assets/images/male.png" alt="Karthik" class="img-responsive" /></td>
+                                <td>Perumal <br /> <span>(Father)</span></td>
+                                <td><a href="tel:+918056055192">80560 55192</a></td>
+                                <td align="center">Sarathi Nagar, Velacherry</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Ram</td>
+                                <td>Male</td>
+                                <td>25</td>
+
+                                <td>Missed</td>
+                                <td><img src="./assets/images/male.png" alt="Karthik" class="img-responsive" /></td>
+                                <td>Siva Rajan <br /> <span>(Father)</span></td>
+                                <td><a href="tel:+919947605519">99476 05519</a></td>
+                                <td align="center">Sarathi Nagar, Velacherry</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Eswari</td>
+                                <td>Female</td>
+                                <td>24</td>
+
+                                <td>Missed in the Morning</td>
+                                <td><img src="./assets/images/female.png" alt="Karthik" class="img-responsive" /></td>
+                                <td>Madasamy <br /> <span>(Father)</span></td>
+                                <td><a href="tel:+919600859243">99475 06620</a></td>
+                                <td align="center">Tiruvanmiyur</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="missing" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add a Missing Person</h4>
+            </div>
+            <div class="modal-body missing-mdl">
+                <div class="col-md-offset-3 col-md-6">
+                    <div class="miss-frm">
+                        <!-- <form> -->
+                            <div class="form-group">
+                                <label for="m-name">Name</label>
+                                <input type="text" class="form-control" id="m-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="m-gen">Gender</label>
+                                <input type="text" class="form-control" id="m-gen">
+                            </div>
+                            <div class="form-group">
+                                <label for="m-age">Age</label>
+                                <input type="text" class="form-control" id="m-age">
+                            </div>
+                            <div class="form-group">
+                                <label for="m-desc">Description / Message</label>
+                                <textarea class="form-control" rows="3" id="m-msg"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="m-desc">Upload Image</label>
+                                <input type="file" name="myFile">
+                            </div>
+                            <div class="form-group">
+                                <label for="m-per">Contact Person</label>
+                                <input type="text" class="form-control" id="m-per">
+                            </div>
+                            <div class="form-group">
+                                <label for="m-mbl">Contact Mobile Number</label>
+                                <input type="text" class="form-control" id="m-mbl">
+                            </div>
+                            <div class="form-group">
+                                <label for="v-loc">Contact Address</label>
+                                <input type="text" class="form-control" id="v-loc"
+                                    placeholder="Ex : Velacherry, Chennai">
+                            </div>
+
+
+                            <button type="submit" class="btn btn-default center-block smt-btn">Submit</button>
+                        <!-- </form> -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

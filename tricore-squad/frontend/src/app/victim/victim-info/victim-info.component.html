@@ -1,0 +1,75 @@
+<section id="dashboard1">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-md-4 col-sm-4 col-lg-offset-4 col-md-offset-4 col-sm-offset-4 col-xs-12">
+				<h4 class="mbl-tit1">Victim Registration</h4>
+				<div class="vluntr-frm">
+					<form [formGroup]="victimForm" (ngSubmit)="OnSaveVictim()">
+						<div class="form-group">
+							<label for="vi-name">Name</label>
+							<input type="text" class="form-control" id="vi-name" formControlName="name">
+						</div>
+						<div class="form-group">
+							<label for="vi-mbl">Mobile Number</label>
+							<input type="text" class="form-control" id="vi-mbl" formControlName="mobileNo">
+						</div>						
+						<div class="form-group">
+							<label for="vi-loc">Address</label>
+							<input type="text" class="form-control" id="vi-loc" placeholder="Ex: 2nd Street, Anna Nagar, Chennai" formControlName="address">
+						</div>
+						<div class="form-group">
+							<label for="vi-help">Help Required</label>
+							<div class="row" formArrayName="needs">
+								<div class="col-md-4">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="Food" formControlName="0"  (change)="onCheckChange($event)">Food</label>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="Medicine" formControlName="1"  (change)="onCheckChange($event)">Medicine</label>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="Doctor" formControlName="2"  (change)="onCheckChange($event)">Doctor</label>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="Clothes" formControlName="3"  (change)="onCheckChange($event)">Clothes</label>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="Blanket" formControlName="4"  (change)="onCheckChange($event)">Blanket</label>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="Shelter" formControlName="5"  (change)="onCheckChange($event)">Shelter</label>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="checkbox">
+									  <label><input type="checkbox" value="Others" formControlName="6"  (change)="onCheckChange($event)">Others</label>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="vi-qty">Quantity / No.of Person</label>
+							<input type="number" class="form-control" id="vi-qty" formControlName="headCount">
+						</div>
+						<div class="form-group">
+							<label for="vi-desc">Description / Message</label>
+							<textarea class="form-control" rows="5" id="msg" formControlName="description"></textarea>
+						</div>
+						<button type="submit" class="btn btn-default center-block smt-btn">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
