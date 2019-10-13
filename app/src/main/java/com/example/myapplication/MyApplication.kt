@@ -60,6 +60,7 @@ class MyApplication : Application() {
         }
         override fun onDeviceConnected(device: Device?, session: Session?) {
             super.onDeviceConnected(device, session)
+            Toast.makeText(applicationContext, "Device connected", Toast.LENGTH_SHORT).show()
             availableDevices.add(device)
         }
 

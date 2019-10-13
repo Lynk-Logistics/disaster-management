@@ -28,7 +28,7 @@ class EmergencyFragment : Fragment() {
         send_emergency_message_button.setOnClickListener {
             val message = message.editableText.toString().trim()
             val disasterResources = DisasterResources.SendEmergencyMessage(
-                    emergencyContact1 = 7010065028,
+                    emergencyContact1 = 8788043980,
                     emergencyContact2 = 7010065028,
                     emergencyContact3 = 7010065028,
                     message = message,
