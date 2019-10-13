@@ -1,0 +1,81 @@
+*{
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+.App {
+  //background-color: #f3f3f3;
+ // padding: 2% 2% 8% 2%;
+
+  .card {
+    margin: 5px;
+    width: 330px;
+    min-height: 500px;
+    background-color: white;
+    color: black !important;
+  }
+
+  .button {
+   
+		border: none;
+		border-radius: 25px;
+		padding: 12px 0;
+		background-color: rgb(89, 153, 5);
+		color: white;
+		text-transform: uppercase;
+		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		font-weight: 600;
+		font-size: 0.8rem;
+	
+	&:focus {
+		outline: none;
+	}
+
+	&:hover {
+		cursor: pointer;
+	}
+	 
+	&:disabled {
+		cursor: not-allowed;
+	}
+  }
+
+  .input {
+		border: 1px solid #DFDFDF;
+		border-radius: 25px;
+		padding: 10px 15px;
+		width: 100%;
+		background-color: #f3f3f3;
+
+		&:focus {
+			outline: none; 
+		}
+
+  }
+
+  .label {
+
+		color: #707070;
+		font-size: .7rem;
+		font-weight: normal;
+		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		text-transform: uppercase;
+		margin: 10px 0 5px 12px;
+		display: block;
+  }
+
+  .select {
+    margin: 3% 10%;
+    color: #DFDFDF;
+  }
+
+  .link {
+    font-size: .9rem;
+    color: rgb(10, 209, 209);
+    display: block;
+    text-align: center;
+    margin: 10px;
+  }
+  
+}
+

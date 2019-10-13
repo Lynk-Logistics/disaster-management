@@ -1,0 +1,25 @@
+.tasks-list {
+    .task-container {
+        text-align: center;
+        .task-header {
+           // text-align: center;
+            font-size: 1.5rem;
+            color: #09317a;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .task {
+            display : inline-block;
+            width: 500px;
+            height: 70px;
+            text-align: center;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            background-color: white;
+            border: 1px solid #dfdfdf;
+            box-shadow: 1px solid #dfdfdf;
+            margin: 25px 20px;
+            border-radius: 25px;
+        }
+    }
+}

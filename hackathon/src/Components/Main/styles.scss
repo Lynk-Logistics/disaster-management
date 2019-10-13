@@ -1,0 +1,12 @@
+.main {
+    .card{
+        display: inline-block;
+        margin: 30px;
+        height: 500px;
+        text-align: center;
+        .button {
+            width: 90%;
+            margin: 200px 10px;
+        }
+    }
+}
