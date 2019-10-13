@@ -1,0 +1,58 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.nizhal.lynkhacks.DoctorLoginFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp">
+        <EditText
+            android:layout_width="280dp"
+            android:maxLength="10"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="Unique ID"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/doctor_id"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/merlo_regular"
+            android:backgroundTint="@color/colorPrimary"
+            android:drawableLeft="@drawable/ic_vpn_key_black_24dp"
+            android:drawablePadding="10dp"
+            android:padding="15sp"/>
+
+        <EditText
+            android:layout_width="280dp"
+            android:maxLength="10"
+            android:layout_height="wrap_content"
+            android:inputType="textVisiblePassword"
+            android:hint="Enter Password"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/doctor_pass"
+            android:fontFamily="@font/merlo_regular"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_marginTop="15dp"
+            android:drawableLeft="@drawable/ic_lock_black_24dp"
+            android:drawablePadding="10dp"
+            android:padding="15sp"/>
+
+        <at.markushi.ui.CircleButton
+            android:layout_width="64dip"
+            android:layout_height="64dip"
+            android:layout_gravity="right"
+            android:layout_marginRight="5dp"
+            app:cb_color="@color/colorPrimary"
+            android:baselineAlignBottom="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/rightarrow_24dp"
+            android:id="@+id/doctor_login"
+            app:cb_pressedRingWidth="8dip"/>
+
+    </LinearLayout>
+
+</FrameLayout>

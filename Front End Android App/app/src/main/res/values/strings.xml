@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">LynkHacks</string>
+
+    <string name="app_name_colored"><font color='#F4B42E'>Lynk</font> Hacks</string>
+    <string name="title_name_colored"><font color='#F4B42E'>Lyf</font>-Line</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_mob">Enter Mobile</string>
+    <string name="title_activity_test_maps">Map</string>
+</resources>
