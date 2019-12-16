@@ -1,0 +1,89 @@
+<resources>
+    <string name="app_name" translatable="false">Dwarsoft-Lynk-Hackathon</string>
+    <string name="google_maps_key" translatable="false">AIzaSyB-sj_pBHx3TNa1wOu_3QfIe3FmcSAUsYg</string>
+    <string name="auto" translatable="false">Auto</string>
+    <string name="none_enhance" translatable="false">Original</string> <!-- Move no enhance to first and rename -->
+    <string name="enhance" translatable="false">Lighten</string>
+    <string name="enhance_sharp" translatable="false">Magic Color</string>
+    <string name="i_am_a_victim">Victim</string>
+    <string name="i_am_a_volunteer">Volunteer</string>
+    <string name="i_represent_organization">Organization</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="sign_in">Sign In</string>
+    <string name="api_fail">Server Error</string>
+    <string name="message_sent">Message Sent</string>
+    <string name="group_created_success">Group Created Successfully!</string>
+    <string name="share_resources_success">Resource Shared Successfully!</string>
+    <string name="success">Success</string>
+    <string name="address_fail">Please Select Address</string>
+    <string name="name">Name</string>
+    <string name="click_to_set_address">Click To Set Current Address</string>
+    <string name="groups">Groups</string>
+    <string name="search_for_groups">Search For Groups</string>
+    <string name="create_a_group">Create A Group</string>
+    <string name="note_add_whatsapp_telegram_group_link">Note - Add WhatsApp/Telegram Group Link</string>
+    <string name="group_motive">Group Motive</string>
+    <string name="group_name">Group Name</string>
+    <string name="number_of_members_allowed">Number Of Members Allowed</string>
+    <string name="group_link">Group Link</string>
+    <string name="create_group">Create Group</string>
+    <string name="share_resources">Share Resources</string>
+    <string name="describe_your_resource">Describe Your Resource</string>
+    <string name="share">Share</string>
+    <string name="join_group">Join Group</string>
+    <string name="gps_title">GPS Required</string>
+    <string name="gps_description">GPS is required for better Service. Please enable it.</string>
+    <string name="okay">Okay</string>
+    <string name="thank_you_for_submitting_your_help">Thank you!\nYour details has been submitted successfully.</string>
+    <string name="victim_volunteer">Victim / Volunteer</string>
+    <string name="i_m_a">I\'m a</string>
+    <string name="disaster_management">DISASTER MANAGEMENT</string>
+    <string name="i_need_help">I Need Help</string>
+    <string name="request_help">Request Help</string>
+    <string name="how_many_members">How Many Members?</string>
+    <string name="no_of_males">No. Of Males? (Optional)</string>
+    <string name="no_of_females">No. Of Females? (Optional)</string>
+    <string name="no_of_children">No. Of Children? (Optional)</string>
+    <string name="help_type">Help Type </string>
+    <string name="request">Request</string>
+    <string name="describe_your_request">Describe Your Request?</string>
+    <string name="social_handle">SOCIAL HANDLE</string>
+    <string name="update_details">Update Details</string>
+    <string name="authentication_details">Authentication Details</string>
+    <string name="update">Update</string>
+    <string name="complete_header">Do You Want To Help? Your contact details will be shared with the concerned person.</string>
+    <string name="complete_description">Once you accept, it is not reversible.</string>
+    <string name="complete_header1">Do You Want The Help? Your contact details will be shared with the concerned person.</string>
+    <string name="complete_description1">Once you accept, it is not reversible.</string>
+    <string name="close_help">Are you sure you want to close?</string>
+    <string name="close_complete">Do you want us to delete your entry?</string>
+    <string name="accept">Accept</string>
+    <string name="cancel">Cancel</string>
+    <string name="welcome">Welcome</string>
+    <string name="completed_ques">Completed?</string>
+    <string name="gst_no">GST No.</string>
+    <string name="motive">Motive</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="live_tracking">Nearby Victims</string>
+    <string name="host_events">Host Events</string>
+    <string name="raise_funds">Raise Funds</string>
+    <string name="note_add_donation_link">Note - Add Donation Link</string>
+    <string name="fund_campaign_motive">Fund Campaign Motive</string>
+    <string name="campaign_name">Campaign Name</string>
+    <string name="fund_raising_campaign">Fund Raising Campaign</string>
+    <string name="start_campaign">Start Campaign</string>
+    <string name="sponsor_s_name_optional">Sponsor\'s Name (Optional)</string>
+    <string name="help_someone">Help Someone</string>
+    <string name="my_posts">My Posts</string>
+    <string name="contribute">Contribute</string>
+    <string name="search_for_fund_campaigns">Search For Fund Campaigns</string>
+    <string name="collaborate_with_organizations">Collaborate With Organizations</string>
+    <string name="search_for_organizations">Search For Organizations</string>
+    <string name="contact">Contact</string>
+    <string name="state">State</string>
+    <string name="city">City</string>
+    <string name="area">Area</string>
+    <string name="language_header">Change Language</string>
+    <string name="language_description">Do you want to change your language to Hinglish?</string>
+    <string name="yes">Yes</string>
+</resources>

@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Activity.MainActivity"
+    android:background="@color/white"
+    android:padding="10dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:layout_marginTop="40dp"
+                android:layout_alignParentBottom="true"
+                android:textAlignment="center"
+                android:textColor="#9C9C9C"
+                android:layout_marginBottom="20dp"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvtopheader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/i_am_a_volunteer"
+                android:layout_marginTop="30dp"
+                android:layout_alignParentTop="true"
+                android:textAlignment="center"
+                android:textColor="@color/dark_grey"
+                android:textSize="25sp" />
+
+            <LinearLayout
+                android:id="@+id/llLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_below="@+id/tvtopheader"
+                android:padding="5dp"
+                android:layout_marginTop="5dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginEnd="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="155dp"
+                            android:adjustViewBounds="true"
+                            android:id="@+id/btPosts1"
+                            android:background="@drawable/my_posts"
+                            tools:ignore="ContentDescription"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackgroundBorderless" />
+
+                        <com.google.android.material.button.MaterialButton
+                            style="@style/Widget.MaterialComponents.Button"
+                            android:id="@+id/btPosts"
+                            app:rippleColor="@color/black"
+                            app:strokeColor="@color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:backgroundTint="@color/white"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            app:cornerRadius="5dp"
+                            android:text="@string/my_posts" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginStart="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="155dp"
+                            android:adjustViewBounds="true"
+                            android:id="@+id/btResources1"
+                            android:background="@drawable/sharing_resources"
+                            tools:ignore="ContentDescription"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackgroundBorderless" />
+
+                        <com.google.android.material.button.MaterialButton
+                            style="@style/Widget.MaterialComponents.Button"
+                            android:id="@+id/btResources"
+                            app:rippleColor="@color/black"
+                            app:strokeColor="@color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:backgroundTint="@color/white"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            app:cornerRadius="5dp"
+                            android:text="@string/share_resources" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_below="@+id/llLayout1"
+                android:padding="5dp"
+                android:layout_marginEnd="5dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="155dp"
+                            android:adjustViewBounds="true"
+                            android:id="@+id/btGroups1"
+                            android:background="@drawable/icon_groups"
+                            tools:ignore="ContentDescription"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackgroundBorderless" />
+
+                        <com.google.android.material.button.MaterialButton
+                            style="@style/Widget.MaterialComponents.Button"
+                            android:id="@+id/btGroups"
+                            app:rippleColor="@color/black"
+                            app:strokeColor="@color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:backgroundTint="@color/white"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            app:cornerRadius="5dp"
+                            android:text="@string/groups" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginStart="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="155dp"
+                            android:adjustViewBounds="true"
+                            android:id="@+id/btHelp1"
+                            android:background="@drawable/helping"
+                            tools:ignore="ContentDescription"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackgroundBorderless" />
+
+                        <com.google.android.material.button.MaterialButton
+                            style="@style/Widget.MaterialComponents.Button"
+                            android:id="@+id/btHelp"
+                            app:rippleColor="@color/black"
+                            app:strokeColor="@color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:backgroundTint="@color/white"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            app:cornerRadius="5dp"
+                            android:text="@string/help_someone" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_below="@+id/llLayout2"
+                android:padding="5dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginEnd="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="155dp"
+                            android:adjustViewBounds="true"
+                            android:id="@+id/btOrganization1"
+                            android:background="@drawable/icon_organization"
+                            tools:ignore="ContentDescription"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackgroundBorderless" />
+
+                        <com.google.android.material.button.MaterialButton
+                            style="@style/Widget.MaterialComponents.Button"
+                            android:id="@+id/btOrganization"
+                            app:rippleColor="@color/black"
+                            app:strokeColor="@color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:backgroundTint="@color/white"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            app:cornerRadius="5dp"
+                            android:text="@string/i_represent_organization" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginStart="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="155dp"
+                            android:adjustViewBounds="true"
+                            android:id="@+id/btFunds1"
+                            android:background="@drawable/icon_donate"
+                            tools:ignore="ContentDescription"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackgroundBorderless" />
+
+                        <com.google.android.material.button.MaterialButton
+                            style="@style/Widget.MaterialComponents.Button"
+                            android:id="@+id/btFunds"
+                            app:rippleColor="@color/black"
+                            app:strokeColor="@color/black"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:backgroundTint="@color/white"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            app:cornerRadius="5dp"
+                            android:text="@string/contribute" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

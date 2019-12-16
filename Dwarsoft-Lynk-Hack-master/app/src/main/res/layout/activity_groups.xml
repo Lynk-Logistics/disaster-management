@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Groups.Groups"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/groups"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topGuideline"/>
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button"
+        android:id="@+id/btCreateGroup"
+        app:rippleColor="@color/white"
+        app:strokeColor="@color/white"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/green"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:cornerRadius="5dp"
+        android:text="@string/create_group"
+        app:layout_constraintStart_toStartOf="@id/startGuideline"
+        app:layout_constraintEnd_toEndOf="@id/endGuideline"
+        app:layout_constraintTop_toBottomOf="@id/topGuideline1"/>
+
+    <TextView
+        android:id="@+id/tvSearchHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/search_for_groups"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="@id/startGuideline"
+        app:layout_constraintEnd_toEndOf="@id/endGuideline"
+        app:layout_constraintTop_toBottomOf="@id/btCreateGroup" />
+
+    <LinearLayout
+        android:id="@+id/llStates"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/spinner_border"
+        app:layout_constraintStart_toStartOf="@+id/startGuideline"
+        app:layout_constraintEnd_toEndOf="@+id/endGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/tvSearchHeader">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:text="@string/state"
+            android:gravity="center"
+            android:textColor="@color/black" />
+
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:id="@+id/spState"
+            android:layout_width="0dp"
+            android:layout_weight="7"
+            android:layout_height="50dp"
+            android:textStyle="bold"
+            app:ms_background_color="@color/white"
+            app:ms_arrow_tint="@color/black"
+            app:ms_text_color="@color/black"
+            app:ms_hint_color="@color/black"
+            android:layout_marginTop="5dp"
+            android:padding="2dp"
+            android:layout_marginEnd="2dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llCity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/spinner_border"
+        app:layout_constraintStart_toStartOf="@+id/startGuideline"
+        app:layout_constraintEnd_toEndOf="@+id/endGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/llStates">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:text="@string/city"
+            android:gravity="center"
+            android:textColor="@color/black" />
+
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:id="@+id/spCity"
+            android:layout_width="0dp"
+            android:layout_weight="7"
+            android:layout_height="50dp"
+            android:textStyle="bold"
+            app:ms_background_color="@color/white"
+            app:ms_arrow_tint="@color/black"
+            app:ms_text_color="@color/black"
+            app:ms_hint_color="@color/black"
+            android:layout_marginTop="5dp"
+            android:padding="2dp"
+            android:layout_marginEnd="2dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llArea"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/spinner_border"
+        app:layout_constraintStart_toStartOf="@+id/startGuideline"
+        app:layout_constraintEnd_toEndOf="@+id/endGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/llCity">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:text="@string/area"
+            android:gravity="center"
+            android:textColor="@color/black" />
+
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:id="@+id/spArea"
+            android:layout_width="0dp"
+            android:layout_weight="7"
+            android:layout_height="50dp"
+            android:textStyle="bold"
+            app:ms_background_color="@color/white"
+            app:ms_arrow_tint="@color/black"
+            app:ms_text_color="@color/black"
+            app:ms_hint_color="@color/black"
+            android:layout_marginTop="5dp"
+            android:padding="2dp"
+            android:layout_marginEnd="2dp" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="10dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@id/startGuideline"
+        app:layout_constraintEnd_toEndOf="@id/endGuideline"
+        app:layout_constraintTop_toBottomOf="@id/llArea"
+        app:layout_constraintBottom_toTopOf="@+id/bottomGuideline"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topGuideline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomGuideline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".98" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/startGuideline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/endGuideline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topGuideline1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/startGuideline1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/endGuideline1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".8" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

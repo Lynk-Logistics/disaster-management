@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.dwarsoftgames.dwarsoft_lynk_hackathon">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="m">
+        <activity android:name=".Activity.Volunteer.OrganizationsList"></activity>
+        <activity android:name=".Activity.Volunteer.Contribute" />
+        <activity android:name=".Activity.Organization.RaiseFunds" />
+        <activity android:name=".Activity.Organization.OrganizationAuthDetails" />
+        <activity android:name=".Activity.Organization.OrganizationDashboard" />
+        <activity android:name=".Activity.Organization.OrganizationAuth" />
+        <activity android:name=".Activity.Volunteer.VolunteerPosts" />
+        <activity android:name=".Activity.Authentication.UpdateProfile" />
+        <activity android:name=".Activity.TwitterView" />
+        <activity android:name=".Activity.Victim.VictimHelpResource" />
+        <activity android:name=".Activity.HomeScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.Victim.VictimDashboard" />
+        <activity android:name=".Activity.SuccessScreen" />
+        <activity android:name=".Activity.Volunteer.VictimHelpMap" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity android:name=".Activity.Volunteer.ShareResources" />
+        <activity android:name=".Activity.Groups.CreateGroup" />
+        <activity android:name=".Activity.Groups.Groups" />
+        <activity android:name=".Activity.Authentication.AuthenticationDetails" />
+        <activity android:name=".Activity.Volunteer.VolunteerDashboard" />
+        <activity android:name=".Activity.Authentication.Authentication" />
+        <activity android:name=".Activity.MainActivity" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+    </application>
+
+</manifest>

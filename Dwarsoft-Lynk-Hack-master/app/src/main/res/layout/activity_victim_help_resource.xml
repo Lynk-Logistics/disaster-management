@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Victim.VictimHelpResource"
+    android:background="@color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/request_help"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/topGuideline" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tiDescription"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:errorEnabled="true"
+                android:hint="@string/describe_your_request"
+                app:boxStrokeColor="@color/black"
+                android:textColorHint="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/startGuideline"
+                app:layout_constraintEnd_toEndOf="@+id/endGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/topGuideline1">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:inputType="textMultiLine"
+                    android:lines="2"
+                    android:maxLines="2"
+                    android:minLines="2"
+                    android:maxLength="1000"
+                    android:gravity="top|start" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tiMembers"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:errorEnabled="true"
+                android:hint="@string/how_many_members"
+                app:boxStrokeColor="@color/black"
+                android:textColorHint="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/startGuideline"
+                app:layout_constraintEnd_toEndOf="@+id/endGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/tiDescription">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etMembers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:maxLines="1"
+                    android:maxLength="5"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tiMale"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:errorEnabled="true"
+                android:hint="@string/no_of_males"
+                app:boxStrokeColor="@color/black"
+                android:textColorHint="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/startGuideline"
+                app:layout_constraintEnd_toEndOf="@+id/endGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/tiMembers">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etMale"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:maxLines="1"
+                    android:maxLength="5"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tiFemale"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:errorEnabled="true"
+                android:hint="@string/no_of_females"
+                app:boxStrokeColor="@color/black"
+                android:textColorHint="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/startGuideline"
+                app:layout_constraintEnd_toEndOf="@+id/endGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/tiMale">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etFemale"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:maxLines="1"
+                    android:maxLength="5"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tiChildren"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:errorEnabled="true"
+                android:hint="@string/no_of_children"
+                app:boxStrokeColor="@color/black"
+                android:textColorHint="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/startGuideline"
+                app:layout_constraintEnd_toEndOf="@+id/endGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/tiFemale">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etChildren"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:maxLines="1"
+                    android:maxLength="5"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/llHelp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:weightSum="10"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/spinner_border"
+                app:layout_constraintStart_toStartOf="@id/startGuideline"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                app:layout_constraintTop_toBottomOf="@id/tiChildren">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:text="@string/help_type"
+                    android:gravity="center"
+                    android:textColor="@color/black" />
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/spHelp"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="7"
+                    android:textStyle="bold"
+                    app:ms_background_color="@color/white"
+                    app:ms_arrow_tint="@color/black"
+                    app:ms_text_color="@color/black"
+                    app:ms_hint_color="@color/black"
+                    android:layout_marginTop="10dp"
+                    android:padding="2dp"
+                    android:layout_marginEnd="2dp" />
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialComponents.Button"
+                android:id="@+id/btRequest"
+                app:rippleColor="@color/white"
+                app:strokeColor="@color/white"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/green"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:cornerRadius="5dp"
+                android:text="@string/request"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@id/startGuideline1"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline1"
+                app:layout_constraintTop_toBottomOf="@id/llHelp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/topGuideline"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent=".07" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/startGuideline"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".1" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/endGuideline"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".9" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/topGuideline1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent=".17" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/startGuideline1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".2" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/endGuideline1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".8" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

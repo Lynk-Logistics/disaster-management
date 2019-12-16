@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "371774961168",
+    "firebase_url": "https://dwarsoft-lynk-hack.firebaseio.com",
+    "project_id": "dwarsoft-lynk-hack",
+    "storage_bucket": "dwarsoft-lynk-hack.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:371774961168:android:b3d1c230981151758bfc95",
+        "android_client_info": {
+          "package_name": "com.dwarsoftgames.dwarsoft_lynk_hackathon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "371774961168-r04h24kt1951u6ssif7rnlqdq8g2nekf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dwarsoftgames.dwarsoft_lynk_hackathon",
+            "certificate_hash": "93fb60d715cc40c50eb13a94431657f6f4f6b373"
+          }
+        },
+        {
+          "client_id": "371774961168-gatg2birmtokib0ke6l3kli9qdcg4s0e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-sj_pBHx3TNa1wOu_3QfIe3FmcSAUsYg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "371774961168-gatg2birmtokib0ke6l3kli9qdcg4s0e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
