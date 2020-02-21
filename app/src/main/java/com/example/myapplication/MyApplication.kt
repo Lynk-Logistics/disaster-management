@@ -101,8 +101,10 @@ class MyApplication : Application() {
             override fun onRegistrationSuccessful(bridgefyClient: BridgefyClient) {
                 // BridgefyActivity is ready to start
                 val builder = Config.Builder()
-                builder.setEnergyProfile(BFEnergyProfile.HIGH_PERFORMANCE)
-                builder.setEncryption(false)
+                builder.apply {
+                    setEnergyProfile(BFEnergyProfile.HIGH_PERFORMANCE)
+                    setEncryption(false)
+                }
 
                 Bridgefy.start(messageListener, stateListener, builder.build())
             }
