@@ -55,6 +55,7 @@ class MyApplication : Application() {
         override fun onStarted() {
                 super.onStarted()
             Log.v("bridgefy", "started")
+            Toast.makeText(this@MyApplication, "started", Toast.LENGTH_SHORT).show()
         }
 
         override fun onStartError(message: String?, errorCode: Int) {
@@ -95,7 +96,7 @@ class MyApplication : Application() {
 
         createNotificationChannel()
         foodServiceDao = FoodServiceDatabase.getDb(applicationContext).foodServiceDao()
-        Bridgefy.initialize(applicationContext, "610fd8bb-54e6-4a21-9554-00740a7a1ba8", object : RegistrationListener() {
+        Bridgefy.initialize(applicationContext, "2b56623e-15a4-43ca-9050-eb6d8fd3edf7", object : RegistrationListener() {
 
             override fun onRegistrationSuccessful(bridgefyClient: BridgefyClient) {
                 // BridgefyActivity is ready to start
