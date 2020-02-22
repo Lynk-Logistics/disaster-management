@@ -1,106 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/gradient"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:background="@color/black">
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/ll1"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_margin="10dp"
-        android:gravity="center">
+        android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/settings_icon"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="end"
-            android:layout_margin="10dp"
-            android:layout_marginTop="10dp"
-            android:padding="10dp"
-            app:srcCompat="@drawable/ic_settings_black_24dp" />
 
         <TextView
+            android:id="@+id/emergency"
+            android:layout_marginBottom="150dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:translationZ="100dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/app_name"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/montserrat"
+            android:text="TAP FOR EMERGENCY"
             android:textColor="@color/white"
-            android:layout_gravity="left"
-            android:textSize="30sp"
-            android:layout_marginBottom="30dp"
-            android:fontFamily="sans-serif-condensed-medium"/>
-
-
-
-        <Button
-            android:id="@+id/emergency_button"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_width="339dp"
-            android:layout_height="86dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="100dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/rectangle"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:text="@string/emergency_n_contact"
-            android:textSize="15sp" />
-
-        <Button
-            android:id="@+id/food_button"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_width="339dp"
-            android:layout_height="86dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="100dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/rectangle"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:text="@string/food_and_water"
             android:textSize="15sp"
-            android:onClick="foodclick"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
-            android:id="@+id/medication_button"
-            android:layout_gravity="center"
+        <TextView
             android:gravity="center"
-            android:layout_width="339dp"
-            android:layout_height="86dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="100dp"
-            android:layout_margin="10dp"
-            android:onClick="medicationclick"
-            android:background="@drawable/rectangle"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:text="@string/medication"
-            android:textSize="15sp" />
-
-        <Button
-            android:id="@+id/volunteer_button"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_width="339dp"
-            android:layout_height="86dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="100dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/rectangle"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:text="@string/volunteering"
+            android:alpha="0.7"
+            android:layout_marginBottom="150dp"
+            app:layout_constraintTop_toBottomOf="@+id/emergency"
+            android:translationZ="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Tap this button for sending messages to your emergency contacts. "
+            android:textColor="@color/white"
             android:textSize="15sp"
-            />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</RelativeLayout>
+    <com.skyfishjy.library.RippleBackground
+        android:visibility="visible"
+        app:rb_type="fillRipple"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/ripple"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:rb_color="@color/white"
+        app:rb_radius="50dp"
+        app:rb_rippleAmount="4"
+        app:rb_duration="3000"
+        app:rb_scale="2">
+
+        <ImageView
+            android:src="@drawable/icon_alert"
+            android:tint="@color/colorPrimary"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:id="@+id/ripple_img" />
+
+    </com.skyfishjy.library.RippleBackground>
+
+</FrameLayout>

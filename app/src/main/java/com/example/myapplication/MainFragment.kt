@@ -18,20 +18,21 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        emergency_button.setOnClickListener {
+        ripple_img.setOnClickListener {
+            ripple.startRippleAnimation()
             findNavController().navigate(R.id.action_mainFragment_to_emergencyFragment)
         }
 
-        food_button.setOnClickListener {
-            findNavController().navigate(R.id.action_mainFragment_to_foodFragment)
-        }
-
-        medication_button.setOnClickListener {
-            findNavController().navigate(R.id.action_mainFragment_to_medicationFragment)
-        }
-
-        settings_icon.setOnClickListener {
-            findNavController().navigate(R.id.action_mainFragment_to_settingsFragment)
-        }
+//        food_button.setOnClickListener {
+//            findNavController().navigate(R.id.action_mainFragment_to_foodFragment)
+//        }
+//
+//        medication_button.setOnClickListener {
+//            findNavController().navigate(R.id.action_mainFragment_to_medicationFragment)
+//        }
+//
+//        settings_icon.setOnClickListener {
+//            findNavController().navigate(R.id.action_mainFragment_to_settingsFragment)
+//        }
     }
 }

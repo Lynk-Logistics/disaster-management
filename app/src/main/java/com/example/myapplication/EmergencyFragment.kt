@@ -32,10 +32,28 @@ class EmergencyFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        send_emergency_message_button.setOnClickListener {
+        default_button.setOnClickListener {
+            message_button.isChecked = false
+
+        }
+
+        message_button.setOnClickListener {
+            default_button.isChecked = false
+        }
+
+        back.setOnClickListener {
+            findNavController().popBackStack()
+        }
+
+        broadcast.setOnClickListener {
             CoroutineScope(Dispatchers.IO).launch {
                 val userDao = AppDatabaseInstance.getDb(requireContext()).userDao()
-                val message = message.editableText.toString().trim()
+                val message = if (default_button.isActivated) {
+                    "SOS, I am stuck and need help. I am here at (Location)"
+                } else {
+                    message.editableText.toString().trim()
+                }
+
                 val contact1 = DisasterResources.SendEmergencyMessage(
                         emergencyContact = userDao.getCurrentUser()?.emergencyContact?.contact1 ?: 8788043980,
                         message = message,
