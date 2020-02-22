@@ -17,10 +17,9 @@ import android.telephony.SmsManager
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.example.myapplication.BridegfyVictim.*
-import com.example.myapplication.BridegfyVictim.Dao.FoodServiceDao
-import com.example.myapplication.BridegfyVictim.Dao.FoodServiceDatabase
-import com.example.myapplication.BridegfyVictim.Dao.FoodServiceEntity
-import kotlinx.android.synthetic.main.fragment_settings.*
+import com.example.myapplication.BridegfyVictim.Dao.food.FoodServiceDao
+import com.example.myapplication.BridegfyVictim.Dao.AppDatabaseInstance
+import com.example.myapplication.BridegfyVictim.Dao.food.FoodServiceEntity
 
 class MyApplication : Application() {
 
@@ -95,7 +94,7 @@ class MyApplication : Application() {
         super.onCreate()
 
         createNotificationChannel()
-        foodServiceDao = FoodServiceDatabase.getDb(applicationContext).foodServiceDao()
+        foodServiceDao = AppDatabaseInstance.getDb(applicationContext).foodServiceDao()
         Bridgefy.initialize(applicationContext, "2b56623e-15a4-43ca-9050-eb6d8fd3edf7", object : RegistrationListener() {
 
             override fun onRegistrationSuccessful(bridgefyClient: BridgefyClient) {
@@ -146,7 +145,7 @@ class MyApplication : Application() {
         Toast.makeText(applicationContext, "$foodService", Toast.LENGTH_SHORT).show()
         foodServiceDao.insertFoodService(
                 FoodServiceEntity(
-                        longitude =  foodService.longitude ,
+                        longitude = foodService.longitude,
                         latitude = foodService.latitude,
                         message = foodService.numOfPeople.toString()
                 )

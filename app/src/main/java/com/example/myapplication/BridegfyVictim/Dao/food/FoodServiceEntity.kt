@@ -1,4 +1,4 @@
-package com.example.myapplication.BridegfyVictim.Dao
+package com.example.myapplication.BridegfyVictim.Dao.food
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
