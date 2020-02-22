@@ -199,7 +199,8 @@ class MyApplication : Application() {
     private fun smsSendMessage(emergencyRequest: DisasterResources.SendEmergencyMessage) {
         try {
             val smsManager = SmsManager.getDefault()
-            smsManager.sendTextMessage(emergencyRequest.emergencyContact.toString() , null, emergencyRequest.message, null, null)
+            smsManager.sendTextMessage(emergencyRequest.emergencyContact1.toString() , null, emergencyRequest.message, null, null)
+            smsManager.sendTextMessage(emergencyRequest.emergencyContact2.toString() , null, emergencyRequest.message, null, null)
             Toast.makeText(applicationContext, "Message Sent",
                     Toast.LENGTH_LONG).show()
         } catch (ex: Exception) {
