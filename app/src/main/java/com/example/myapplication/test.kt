@@ -9,7 +9,7 @@ class test : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_test)
+        setContentView(R.layout.login_test)
 
         window.setFlags(
                 WindowManager.LayoutParams.FLAG_FULLSCREEN,
