@@ -63,6 +63,7 @@ fun getDeviceId(context: Context): String {
 }
 
 object NetworkUtil {
-
     val gson = Gson()
 }
+
+fun Any?.isNull(): Boolean = this == null

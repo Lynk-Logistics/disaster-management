@@ -11,9 +11,13 @@ import androidx.core.content.ContextCompat
 import androidx.core.app.ComponentActivity.ExtraData
 import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import androidx.navigation.findNavController
+import com.example.myapplication.BridegfyVictim.Dao.AppDatabaseInstance
 import com.example.myapplication.R
+import kotlinx.coroutines.runBlocking
 
 class BridgefyActivity : AppCompatActivity() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +48,15 @@ class BridgefyActivity : AppCompatActivity() {
             // Permission has already been granted
         }
         checkForSmsPermission()
+        val userDao = AppDatabaseInstance.getDb(this).userDao()
+        runBlocking {
+            val currentUser = userDao.getCurrentUser()
+            if (currentUser.isNull()) { //no user instance found
+                findNavController(R.id.nav_host_fragment).navigate(R.id.loginFragment)
+            } else {
+                findNavController(R.id.nav_host_fragment).navigate(R.id.mainFragment)
+            }
+        }
     }
 
     private fun checkForSmsPermission() {
