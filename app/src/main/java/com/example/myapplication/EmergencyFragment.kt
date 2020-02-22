@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.example.myapplication.BridegfyVictim.CommonViewModel
@@ -13,13 +14,15 @@ import com.example.myapplication.BridegfyVictim.CommonViewModel.Companion.broadc
 import com.example.myapplication.BridegfyVictim.Dao.AppDatabaseInstance
 import com.example.myapplication.BridegfyVictim.getDeviceId
 import com.example.myapplication.BridegfyVictim.model.DisasterResources
+import com.example.myapplication.BridegfyVictim.model.NativeLocationFragment
+import com.example.myapplication.BridegfyVictim.model.OneOf
 import kotlinx.android.synthetic.main.activity_emergencyactivity.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class EmergencyFragment : Fragment() {
+class EmergencyFragment : NativeLocationFragment() {
 
     lateinit var viewModel: CommonViewModel
 
@@ -32,6 +35,7 @@ class EmergencyFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        detectLocation()
         default_button.setOnClickListener {
             message_button.isChecked = false
 
@@ -49,7 +53,7 @@ class EmergencyFragment : Fragment() {
             CoroutineScope(Dispatchers.IO).launch {
                 val userDao = AppDatabaseInstance.getDb(requireContext()).userDao()
                 val message = if (default_button.isActivated) {
-                    "SOS, I am stuck and need help. I am here at (Location)"
+                    default_sos.text.toString()
                 } else {
                     message.editableText.toString().trim()
                 }
@@ -75,5 +79,21 @@ class EmergencyFragment : Fragment() {
                 }
             }
         }
+    }
+
+    private fun detectLocation() {
+        updateLocation()
+        locationLiveData.observe(this, Observer { location ->
+            when (location) {
+                is OneOf.Success -> {
+                    default_sos.text = "SOS, I am stuck and need help. I am here at ${location.a.latitude}, ${ location.a.longitude}"
+                    locationLiveData.removeObservers(this)
+                }
+                is OneOf.Failure -> {
+                    Toast.makeText(requireContext(), "failed : ${location.b}", Toast.LENGTH_SHORT)
+                            .show()
+                }
+            }
+        })
     }
 }
