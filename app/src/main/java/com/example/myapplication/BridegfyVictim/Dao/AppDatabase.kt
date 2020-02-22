@@ -22,7 +22,7 @@ object AppDatabaseInstance {
     }
 }
 
-@Database(entities = [FoodServiceEntity::class, UserDetail::class], version = 1)
+@Database(entities = [FoodServiceEntity::class, UserDetail::class], version = 2)
 @TypeConverters(UserDetail.EnumConverters::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun foodServiceDao(): FoodServiceDao

@@ -41,11 +41,20 @@
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.myapplication.ui.LoginFragment"
+        android:name="com.example.myapplication.ui.login.LoginFragment"
         android:label="login_fragment"
         tools:layout="@layout/login_fragment" >
         <action
-            android:id="@+id/action_loginFragment_to_mainFragment"
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.myapplication.ui.login.register.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_mainFragment"
             app:destination="@id/mainFragment"
             app:popUpTo="@+id/mainFragment"
             app:popUpToInclusive="true" />
