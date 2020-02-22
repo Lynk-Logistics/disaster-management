@@ -7,8 +7,7 @@ sealed class DisasterResources(
 ) {
 
     data class SendEmergencyMessage(
-            val emergencyContact1: Long,
-            val emergencyContact2: Long,
+            val emergencyContact: Long,
             val message: String,
             val deviceId: String,
             private val tag: String = EMERGENCY_CONTACT_TAG
