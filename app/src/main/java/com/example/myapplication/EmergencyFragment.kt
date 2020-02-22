@@ -8,9 +8,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.example.myapplication.BridegfyVictim.CommonViewModel
 import com.example.myapplication.BridegfyVictim.CommonViewModel.Companion.broadcastMessage
+import com.example.myapplication.BridegfyVictim.Dao.AppDatabaseInstance
 import com.example.myapplication.BridegfyVictim.getDeviceId
 import com.example.myapplication.BridegfyVictim.model.DisasterResources
 import kotlinx.android.synthetic.main.activity_emergencyactivity.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class EmergencyFragment : Fragment() {
 
@@ -26,15 +30,17 @@ class EmergencyFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         send_emergency_message_button.setOnClickListener {
-            val message = message.editableText.toString().trim()
-            val disasterResources = DisasterResources.SendEmergencyMessage(
-                    emergencyContact1 = 8788043980,
-                    emergencyContact2 = 7010065028,
-                    emergencyContact3 = 7010065028,
-                    message = message,
-                    deviceId = getDeviceId(requireContext())
-            )
-            broadcastMessage(disasterResources)
+            CoroutineScope(Dispatchers.IO).launch {
+                val userDao = AppDatabaseInstance.getDb(requireContext()).userDao()
+                val message = message.editableText.toString().trim()
+                val disasterResources = DisasterResources.SendEmergencyMessage(
+                        emergencyContact1 = userDao.getCurrentUser()?.emergencyContact?.contact1 ?: 8788043980,
+                        emergencyContact2 = userDao.getCurrentUser()?.emergencyContact?.contact2 ?: 7010065028,
+                        message = message,
+                        deviceId = getDeviceId(requireContext())
+                )
+                broadcastMessage(disasterResources)
+            }
         }
     }
 }
