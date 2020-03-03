@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/gradient"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/back"
+        android:tint="@color/white"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="30dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+        android:layout_height="30dp"
+        android:src="@drawable/icon_back"/>
+
+    <TextView
+        android:textFontWeight="700"
+        android:alpha="0.7"
+        android:fontFamily="@font/montserrat"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:text="Customize Message"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        app:layout_constraintStart_toEndOf="@+id/back"/>
+
+    <TextView
+        android:layout_marginTop="45dp"
+        android:id="@+id/title"
+        android:textStyle="bold"
+        android:fontFamily="@font/montserrat"
+        android:textColor="@color/white"
+        android:textSize="23sp"
+        android:text="Customize Message"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintTop_toBottomOf="@id/back"
+        android:layout_marginStart="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <RadioButton
+        android:layout_marginTop="15dp"
+        android:id="@+id/default_button"
+        android:drawableTint="@color/white"
+        android:buttonTint="@color/white"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="15dp"
+        android:text="Default Message"
+        android:textColor="@color/white"
+        android:outlineAmbientShadowColor="@color/white"
+        android:shadowColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"/>
+
+
+    <RelativeLayout
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/default_button"
+        android:id="@+id/default_msg"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <View
+            android:alpha="0.2"
+            android:background="@drawable/round_white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:padding="15dp"
+            android:textSize="19sp"
+            android:textColor="@color/white"
+            android:text="SOS, I am stuck and need help. I am here at (Location) "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/default_sos"/>
+
+
+    </RelativeLayout>
+
+    <RadioButton
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/default_msg"
+        android:id="@+id/message_button"
+        android:drawableTint="@color/white"
+        android:buttonTint="@color/white"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="15dp"
+        android:text="Customize Message"
+        android:textColor="@color/white"
+        android:outlineAmbientShadowColor="@color/white"
+        android:shadowColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"/>
+
+    <EditText
+        android:maxLength="25"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/message_button"
+        android:id="@+id/message"
+        android:textColorHint="@color/white"
+        android:padding="10dp"
+        android:hint="Enter Message (max char 25)"
+        android:gravity="start"
+        android:background="@drawable/round_border_white"
+        android:layout_margin="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"/>
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@+id/message"
+        android:id="@+id/broadcast"
+        android:elevation="2dp"
+        android:gravity="center"
+        android:textSize="17sp"
+        android:textColor="@color/white"
+        android:text="Broadcast"
+        android:background="@drawable/button_round_mehroon"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

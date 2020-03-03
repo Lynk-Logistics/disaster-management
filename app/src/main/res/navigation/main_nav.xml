@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.myapplication.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_emergencyFragment"
+            app:destination="@id/emergencyFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_foodFragment"
+            app:destination="@id/foodFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_medicationFragment"
+            app:destination="@id/medicationFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/emergencyFragment"
+        android:name="com.example.myapplication.EmergencyFragment"
+        android:label="EmergencyFragment" />
+    <fragment
+        android:id="@+id/foodFragment"
+        android:name="com.example.myapplication.FoodFragment"
+        android:label="FoodFragment" />
+    <fragment
+        android:id="@+id/medicationFragment"
+        android:name="com.example.myapplication.MedicationFragment"
+        android:label="activity_medication"
+        tools:layout="@layout/activity_medication" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.myapplication.BridegfyVictim.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.myapplication.ui.login.LoginFragment"
+        android:label="login_fragment"
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.myapplication.ui.login.register.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@+id/mainFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

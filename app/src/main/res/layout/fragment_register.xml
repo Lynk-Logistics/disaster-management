@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Set up emergency contacts"
+            android:textColor="@color/white"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/back" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_marginTop="30dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.1"
+                android:background="#000000" />
+
+            <ImageView
+                android:id="@+id/add"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toLeftOf="@+id/add_contacts"
+                android:padding="4dp"
+                android:src="@drawable/icon_round_add"
+                android:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/add_contacts"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="15dp"
+                android:backgroundTint="@color/white"
+                android:buttonTint="@color/white"
+                android:drawableTint="@color/white"
+                android:gravity="center"
+                android:outlineAmbientShadowColor="@color/white"
+                android:shadowColor="@color/white"
+                android:text="Add from contacts"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/contact1"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:backgroundTint="@color/white"
+                android:buttonTint="@color/white"
+                android:drawableTint="@color/white"
+                android:gravity="center"
+                android:outlineAmbientShadowColor="@color/white"
+                android:shadowColor="@color/white"
+                android:text="CONTACT 1"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/user"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/contact1"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:padding="3dp"
+                android:src="@drawable/icon_user"
+                android:tint="@color/white" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name_one"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/contact1"
+                android:layout_marginStart="65dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/round_border_white"
+                android:hint="Name"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/grey" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/user"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="40dp"
+                android:padding="3dp"
+                android:src="@drawable/icon_phone"
+                android:tint="@color/white" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/number_one"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:maxLength="10"
+                android:inputType="number"
+                android:layout_below="@+id/name_one"
+                android:layout_marginStart="65dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/round_border_white"
+                android:hint="Mobile"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/grey" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_marginTop="30dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.1"
+                android:background="#000000" />
+
+            <ImageView
+                android:id="@+id/add_2"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toLeftOf="@+id/add_contacts_2"
+                android:padding="4dp"
+                android:src="@drawable/icon_round_add"
+                android:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/add_contacts_2"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="15dp"
+                android:backgroundTint="@color/white"
+                android:buttonTint="@color/white"
+                android:drawableTint="@color/white"
+                android:gravity="center"
+                android:outlineAmbientShadowColor="@color/white"
+                android:shadowColor="@color/white"
+                android:text="Add from contacts"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/contact2"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:backgroundTint="@color/white"
+                android:buttonTint="@color/white"
+                android:drawableTint="@color/white"
+                android:gravity="center"
+                android:outlineAmbientShadowColor="@color/white"
+                android:shadowColor="@color/white"
+                android:text="CONTACT 2"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/user2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/contact2"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:padding="3dp"
+                android:src="@drawable/icon_user"
+                android:tint="@color/white" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name_two"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/contact2"
+                android:layout_marginStart="65dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/round_border_white"
+                android:hint="Name"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/grey" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/user2"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="40dp"
+                android:padding="3dp"
+                android:src="@drawable/icon_phone"
+                android:tint="@color/white" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/number_two"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/name_two"
+                android:layout_marginStart="65dp"
+                android:layout_marginTop="15dp"
+                android:maxLength="10"
+                android:inputType="number"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/round_border_white"
+                android:hint="Mobile"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/grey" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/save"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/button_round_mehroon"
+            android:elevation="2dp"
+            android:gravity="center"
+            android:text="Save"
+            android:textColor="@color/white"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

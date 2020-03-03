@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/edit1"
+            android:text="hello world"
+            android:textColor="@color/white"
+            android:layout_gravity="left"
+            android:textSize="40sp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textStyle="bold|italic" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:id="@+id/uti"
+            android:hint="type your message"
+            android:textColor="@color/black"
+            android:background="#fffff0"
+            android:layout_marginTop="50dp"
+            android:layout_height="70dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:id="@+id/uti1"
+            android:hint="comments"
+            android:textColor="@color/black"
+            android:background="#fffff0"
+            android:layout_marginTop="50dp"
+            android:layout_height="70dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:id="@+id/uti2"
+            android:hint="Questions?"
+            android:textColor="@color/black"
+            android:background="#fffff0"
+            android:layout_marginTop="50dp"
+            android:layout_height="70dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center" />
+
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:background="@color/orangeone"
+            android:text="click"
+            android:gravity="center"/>
+
+
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>
