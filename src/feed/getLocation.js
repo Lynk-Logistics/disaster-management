@@ -153,6 +153,7 @@ class Main extends React.Component {
           }
       
   render() {
+    console.log(this.props);
      const  restorePoints = this.state.rangeData ? this.state.rangeData.restorePoints : null;
      const  rescueRequests = this.state.rangeData ? this.state.rangeData.rescueRequests : null;
      const  offerGoodsRequest = this.state.rangeData ? this.state.rangeData.offerGoodsRequest : null;
@@ -222,7 +223,7 @@ class Main extends React.Component {
             </Col>
             <Col span={16} style={{height:"100%", backgroundColor:"black"}}>
             <GoogleMapReact
-                bootstrapURLKeys={{ key: " YOUR_API_KEY_HERE" }}
+                bootstrapURLKeys={{ key: constants.google_map_Key }}
                 defaultCenter={centerPoint} 
                 defaultZoom={12}
                 >

@@ -27,7 +27,7 @@ class SideBar extends Component{
             })
             .catch(err => console.log("error", err))
     }
-
+ 
     state={
         regions:[
             

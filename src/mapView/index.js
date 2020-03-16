@@ -1,6 +1,7 @@
 import React , {Component} from "react";
 import GoogleMapReact  from 'google-map-react';
 import { Icon } from 'antd';
+import constants from "../constant";
 
 const Marker = props => (
       <Icon
@@ -29,8 +30,10 @@ class MapView extends Component {
         console.log("map",this.props.region.location? this.props.region.location.coordinates : "waiting")
         return(
             <GoogleMapReact
-                bootstrapURLKeys={{ key: "Your API Key Here" }}
-                defaultCenter={{
+            bootstrapURLKeys={{
+              key: constants.google_map_Key
+            }}               
+             defaultCenter={{
                     lat: 13.00032,
                     lng: 80.21624
                     }} 
